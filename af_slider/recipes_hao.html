@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Hao's Recipe Widget</title>
+</head>
+<body>
+
+
+<div class="unified_widget">
+
+<style type="text/css">
+
+#vxd-wrap{
+	text-align: center;
+	position: relative;
+	zoom: 1;
+}
+
+.vxd-carousel-billboard {
+	width: 770px;
+	margin: 0 auto;
+	zoom: 1;
+}
+.vxd-carousel-billboard .jcarousel-container {
+    background: white;
+    text-align: left;
+    zoom: 1;
+}
+
+.vxd-carousel-billboard .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.vxd-carousel-billboard .jcarousel-container-vertical {
+    width: 770px;
+    height: 480px;
+    padding: 0;
+}
+
+.vxd-carousel-billboard ul.jcarousel li{
+	margin-top: 0;
+}
+
+.vxd-carousel-billboard .jcarousel-clip {
+    overflow: hidden;
+}
+
+
+.vxd-carousel-billboard .jcarousel-clip-vertical {
+    width:  770px;
+    height: 480px;
+}
+
+.vxd-carousel-billboard .jcarousel-item {
+   	width:  770px;
+    height: 480px;
+}
+
+.vxd-carousel-billboard .jcarousel-item-vertical {
+    margin-bottom: 0;
+}
+
+.vxd-carousel-billboard .jcarousel-item a img {
+    border: none;
+    padding: none;
+    margin: 0;
+}
+
+.vxd-carousel-billboard .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+
+#vxd-carousel-billboard-control {
+    margin-bottom: 10px;
+    text-align: center;
+    position: absolute;
+    right: 20px;
+    top: 20px;  
+    z-index: 100;
+    width: 250px;
+    display: none;
+}
+
+#vxd-carousel-billboard-control div.vxd-carousel-billboard-control-awrap {
+    display: block;
+    z-index: 105;
+zoom: 1;
+    background-image: url("https://images-na.ssl-images-amazon.com/images/G/01/img13/cellphones-amazonwireless/_.gif");
+
+}
+
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-container {
+	vertical-align: middle;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	border-color: #b7b7b7 #aaaaaa #a0a0a0;
+	text-align: center;
+	overflow: hidden;
+	max-width: 100%;
+	text-decoration: none !important;
+	x-webkit-border-radius: 3px;
+	x-moz-border-radius: 3px;
+	xborder-radius: 3px;
+	padding: 0;
+	
+}
+
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-container.first {
+	border-width: 1px 1px 1px 1px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-container.last {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail {
+	position: relative;
+	z-index: 1010;
+	padding: 10px;
+	overflow: hidden;
+	x-webkit-border-radius: 3px;
+	x-moz-border-radius: 3px;
+	xborder-radius: 3px;
+	x-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+	x-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+	background: #ececec;
+	background: -moz-linear-gradient(top, whitesmoke, #e3e3e3);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, whitesmoke), color-stop(100%, #e3e3e3));
+	background: -webkit-linear-gradient(top, whitesmoke, #e3e3e3);
+	background: -o-linear-gradient(top, whitesmoke, #e3e3e3);
+	background: -ms-linear-gradient(top, whitesmoke, #e3e3e3);
+	background: linear-gradient(top, whitesmoke, #e3e3e3);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='whitesmoke', endColorstr='#e3e3e3',GradientType=0);
+	zoom: 1;
+	
+}
+
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail.active {
+	background: #fff;
+	filter: none;
+}
+
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-img{
+	float: left;
+	z-index: 1015;
+	margin-right: 8px;
+	border: 1px solid #fff;
+	padding:0;
+}
+
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text{text-align: left;}
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text .vxd-carousel-thumbnail-title{color: #333; font-family: arial, sans-serif; font-size: 13px;}
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text .vxd-carousel-thumbnail-link{font-family: arial, sans-serif; font-size: 13px;}
+
+#vxd-carousel-billboard-control a:focus,
+#vxd-carousel-billboard-control a:active {
+    outline: none;
+}
+
+.jcarousel-scroll {
+    margin-top: 10px;
+    text-align: center;
+}
+
+</style>
+
+<div id="vxd-wrap">
+	
+  <div class="vxd-carousel-billboard"><div id="vxdCarousel" class="jcarousel-container jcarousel-container-vertical">
+    
+    <div id="vxd-carousel-billboard-control">
+      <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-1">
+	      <div class="vxd-carousel-thumbnail-container first">
+		      <div class="vxd-carousel-thumbnail">
+			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Barilla_Spaghetti-99x55.jpg"/>
+			      <div class="vxd-carousel-thumbnail-text">
+				      <span class="vxd-carousel-thumbnail-title">Barilla PLUS® Spaghetti</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011">See Recipe</a>
+			      </div>
+			      <div style="clear: both;"></div>
+		      </div>
+	      </div>
+      </div>
+      
+      <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-2">
+	      <div class="vxd-carousel-thumbnail-container">
+		      <div class="vxd-carousel-thumbnail">
+			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Hershey_Bread-99x55.jpg"/>
+			      <div class="vxd-carousel-thumbnail-text">
+				      <span class="vxd-carousel-thumbnail-title">Easy Chip and Nut Bread</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011">See Recipe</a>
+			      </div>
+			      <div style="clear: both"></div>
+		      </div>
+	      </div>
+      </div>
+      
+      <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-3">
+	      <div class="vxd-carousel-thumbnail-container">
+		      <div class="vxd-carousel-thumbnail">
+			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Miracle_Noodle-99x55.jpg"/>
+			      <div class="vxd-carousel-thumbnail-text">
+				      <span class="vxd-carousel-thumbnail-title">Hot or Cold Sesame Noodles</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011">See Recipe</a>
+			      </div>
+			      <div style="clear: both"></div>
+		      </div>
+	      </div>
+      </div>
+      
+      <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-4">
+	      <div class="vxd-carousel-thumbnail-container">
+		      <div class="vxd-carousel-thumbnail">
+			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Roland_Quinoa-99x55.jpg"/>
+			      <div class="vxd-carousel-thumbnail-text">
+				      <span class="vxd-carousel-thumbnail-title">Curried Quinoa</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794949011">See Recipe</a>
+			      </div>
+			      <div style="clear: both"></div>
+		      </div>
+	      </div>
+      </div>
+      
+      <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-5">
+	      <div class="vxd-carousel-thumbnail-container last">
+		      <div class="vxd-carousel-thumbnail">
+			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-McCormick_Cookie-99x55.jpg"/>
+			      <div class="vxd-carousel-thumbnail-text">
+				      <span class="vxd-carousel-thumbnail-title">Vanilla Rich Chocolate Chip Cookies</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6687018011">See Recipe</a>
+			      </div>
+			      <div style="clear: both"></div>
+		      </div>
+	      </div>
+      </div>
+      
+    </div>
+
+    <div class="jcarousel">
+    	<ul id="vxd-carousel-billboard-carousel" class="jcarousel">
+	    </ul>
+    </div>
+
+
+  </div>
+
+<img id="vxd-carousel-loading" style="position: absolute; top: 45%; left: 45%;" src="https://images-na.ssl-images-amazon.com/images/G/01/ui/loadIndicators/loading-large_labeled.gif"/>
+
+
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+/*!
+ * jCarousel - Riding carousels with jQuery
+ *   http://sorgalla.com/jcarousel/
+ *
+ * Copyright (c) 2006 Jan Sorgalla (http://sorgalla.com)
+ * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+ * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ *
+ * Built on top of the jQuery library
+ *   http://jquery.com
+ *
+ * Inspired by the "Carousel Component" by Bill Scott
+ *   http://billwscott.com/carousel/
+ */
+
+var $=jQuery;
+(function(g){var q={vertical:!1,rtl:!1,start:1,offset:1,size:null,scroll:3,visible:null,animation:"normal",easing:"swing",auto:0,wrap:null,initCallback:null,setupCallback:null,reloadCallback:null,itemLoadCallback:null,itemFirstInCallback:null,itemFirstOutCallback:null,itemLastInCallback:null,itemLastOutCallback:null,itemVisibleInCallback:null,itemVisibleOutCallback:null,animationStepCallback:null,buttonNextHTML:"<div></div>",buttonPrevHTML:"<div></div>",buttonNextEvent:"click",buttonPrevEvent:"click", buttonNextCallback:null,buttonPrevCallback:null,itemFallbackDimension:null},m=!1;g(window).bind("load.jcarousel",function(){m=!0});g.jcarousel=function(a,c){this.options=g.extend({},q,c||{});this.autoStopped=this.locked=!1;this.buttonPrevState=this.buttonNextState=this.buttonPrev=this.buttonNext=this.list=this.clip=this.container=null;if(!c||c.rtl===void 0)this.options.rtl=(g(a).attr("dir")||g("html").attr("dir")||"").toLowerCase()=="rtl";this.wh=!this.options.vertical?"width":"height";this.lt=!this.options.vertical? this.options.rtl?"right":"left":"top";for(var b="",d=a.className.split(" "),f=0;f<d.length;f++)if(d[f].indexOf("jcarousel-skin")!=-1){g(a).removeClass(d[f]);b=d[f];break}a.nodeName.toUpperCase()=="UL"||a.nodeName.toUpperCase()=="OL"?(this.list=g(a),this.clip=this.list.parents(".jcarousel-clip"),this.container=this.list.parents(".jcarousel-container")):(this.container=g(a),this.list=this.container.find("ul,ol").eq(0),this.clip=this.container.find(".jcarousel-clip"));if(this.clip.size()===0)this.clip= this.list.wrap("<div></div>").parent();if(this.container.size()===0)this.container=this.clip.wrap("<div></div>").parent();b!==""&&this.container.parent()[0].className.indexOf("jcarousel-skin")==-1&&this.container.wrap('<div class=" '+b+'"></div>');this.buttonPrev=g(".jcarousel-prev",this.container);if(this.buttonPrev.size()===0&&this.options.buttonPrevHTML!==null)this.buttonPrev=g(this.options.buttonPrevHTML).appendTo(this.container);this.buttonPrev.addClass(this.className("jcarousel-prev"));this.buttonNext= g(".jcarousel-next",this.container);if(this.buttonNext.size()===0&&this.options.buttonNextHTML!==null)this.buttonNext=g(this.options.buttonNextHTML).appendTo(this.container);this.buttonNext.addClass(this.className("jcarousel-next"));this.clip.addClass(this.className("jcarousel-clip")).css({position:"relative"});this.list.addClass(this.className("jcarousel-list")).css({overflow:"hidden",position:"relative",top:0,margin:0,padding:0}).css(this.options.rtl?"right":"left",0);this.container.addClass(this.className("jcarousel-container")).css({position:"relative"}); !this.options.vertical&&this.options.rtl&&this.container.addClass("jcarousel-direction-rtl").attr("dir","rtl");var j=this.options.visible!==null?Math.ceil(this.clipping()/this.options.visible):null,b=this.list.children("li"),e=this;if(b.size()>0){var h=0,i=this.options.offset;b.each(function(){e.format(this,i++);h+=e.dimension(this,j)});this.list.css(this.wh,h+100+"px");if(!c||c.size===void 0)this.options.size=b.size()}this.container.css("display","block");this.buttonNext.css("display","block");this.buttonPrev.css("display", "block");this.funcNext=function(){e.next()};this.funcPrev=function(){e.prev()};this.funcResize=function(){e.resizeTimer&&clearTimeout(e.resizeTimer);e.resizeTimer=setTimeout(function(){e.reload()},100)};this.options.initCallback!==null&&this.options.initCallback(this,"init");!m&&g.browser.safari?(this.buttons(!1,!1),g(window).bind("load.jcarousel",function(){e.setup()})):this.setup()};var f=g.jcarousel;f.fn=f.prototype={jcarousel:"0.2.8"};f.fn.extend=f.extend=g.extend;f.fn.extend({setup:function(){this.prevLast= this.prevFirst=this.last=this.first=null;this.animating=!1;this.tail=this.resizeTimer=this.timer=null;this.inTail=!1;if(!this.locked){this.list.css(this.lt,this.pos(this.options.offset)+"px");var a=this.pos(this.options.start,!0);this.prevFirst=this.prevLast=null;this.animate(a,!1);g(window).unbind("resize.jcarousel",this.funcResize).bind("resize.jcarousel",this.funcResize);this.options.setupCallback!==null&&this.options.setupCallback(this)}},reset:function(){this.list.empty();this.list.css(this.lt, "0px");this.list.css(this.wh,"10px");this.options.initCallback!==null&&this.options.initCallback(this,"reset");this.setup()},reload:function(){this.tail!==null&&this.inTail&&this.list.css(this.lt,f.intval(this.list.css(this.lt))+this.tail);this.tail=null;this.inTail=!1;this.options.reloadCallback!==null&&this.options.reloadCallback(this);if(this.options.visible!==null){var a=this,c=Math.ceil(this.clipping()/this.options.visible),b=0,d=0;this.list.children("li").each(function(f){b+=a.dimension(this, c);f+1<a.first&&(d=b)});this.list.css(this.wh,b+"px");this.list.css(this.lt,-d+"px")}this.scroll(this.first,!1)},lock:function(){this.locked=!0;this.buttons()},unlock:function(){this.locked=!1;this.buttons()},size:function(a){if(a!==void 0)this.options.size=a,this.locked||this.buttons();return this.options.size},has:function(a,c){if(c===void 0||!c)c=a;if(this.options.size!==null&&c>this.options.size)c=this.options.size;for(var b=a;b<=c;b++){var d=this.get(b);if(!d.length||d.hasClass("jcarousel-item-placeholder"))return!1}return!0}, get:function(a){return g(">.jcarousel-item-"+a,this.list)},add:function(a,c){var b=this.get(a),d=0,p=g(c);if(b.length===0)for(var j,e=f.intval(a),b=this.create(a);;){if(j=this.get(--e),e<=0||j.length){e<=0?this.list.prepend(b):j.after(b);break}}else d=this.dimension(b);p.get(0).nodeName.toUpperCase()=="LI"?(b.replaceWith(p),b=p):b.empty().append(c);this.format(b.removeClass(this.className("jcarousel-item-placeholder")),a);p=this.options.visible!==null?Math.ceil(this.clipping()/this.options.visible): null;d=this.dimension(b,p)-d;a>0&&a<this.first&&this.list.css(this.lt,f.intval(this.list.css(this.lt))-d+"px");this.list.css(this.wh,f.intval(this.list.css(this.wh))+d+"px");return b},remove:function(a){var c=this.get(a);if(c.length&&!(a>=this.first&&a<=this.last)){var b=this.dimension(c);a<this.first&&this.list.css(this.lt,f.intval(this.list.css(this.lt))+b+"px");c.remove();this.list.css(this.wh,f.intval(this.list.css(this.wh))-b+"px")}},next:function(){this.tail!==null&&!this.inTail?this.scrollTail(!1): this.scroll((this.options.wrap=="both"||this.options.wrap=="last")&&this.options.size!==null&&this.last==this.options.size?1:this.first+this.options.scroll)},prev:function(){this.tail!==null&&this.inTail?this.scrollTail(!0):this.scroll((this.options.wrap=="both"||this.options.wrap=="first")&&this.options.size!==null&&this.first==1?this.options.size:this.first-this.options.scroll)},scrollTail:function(a){if(!this.locked&&!this.animating&&this.tail){this.pauseAuto();var c=f.intval(this.list.css(this.lt)), c=!a?c-this.tail:c+this.tail;this.inTail=!a;this.prevFirst=this.first;this.prevLast=this.last;this.animate(c)}},scroll:function(a,c){!this.locked&&!this.animating&&(this.pauseAuto(),this.animate(this.pos(a),c))},pos:function(a,c){var b=f.intval(this.list.css(this.lt));if(this.locked||this.animating)return b;this.options.wrap!="circular"&&(a=a<1?1:this.options.size&&a>this.options.size?this.options.size:a);for(var d=this.first>a,g=this.options.wrap!="circular"&&this.first<=1?1:this.first,j=d?this.get(g): this.get(this.last),e=d?g:g-1,h=null,i=0,k=!1,l=0;d?--e>=a:++e<a;){h=this.get(e);k=!h.length;if(h.length===0&&(h=this.create(e).addClass(this.className("jcarousel-item-placeholder")),j[d?"before":"after"](h),this.first!==null&&this.options.wrap=="circular"&&this.options.size!==null&&(e<=0||e>this.options.size)))j=this.get(this.index(e)),j.length&&(h=this.add(e,j.clone(!0)));j=h;l=this.dimension(h);k&&(i+=l);if(this.first!==null&&(this.options.wrap=="circular"||e>=1&&(this.options.size===null||e<= this.options.size)))b=d?b+l:b-l}for(var g=this.clipping(),m=[],o=0,n=0,j=this.get(a-1),e=a;++o;){h=this.get(e);k=!h.length;if(h.length===0){h=this.create(e).addClass(this.className("jcarousel-item-placeholder"));if(j.length===0)this.list.prepend(h);else j[d?"before":"after"](h);if(this.first!==null&&this.options.wrap=="circular"&&this.options.size!==null&&(e<=0||e>this.options.size))j=this.get(this.index(e)),j.length&&(h=this.add(e,j.clone(!0)))}j=h;l=this.dimension(h);if(l===0)throw Error("jCarousel: No width/height set for items. This will cause an infinite loop. Aborting..."); this.options.wrap!="circular"&&this.options.size!==null&&e>this.options.size?m.push(h):k&&(i+=l);n+=l;if(n>=g)break;e++}for(h=0;h<m.length;h++)m[h].remove();i>0&&(this.list.css(this.wh,this.dimension(this.list)+i+"px"),d&&(b-=i,this.list.css(this.lt,f.intval(this.list.css(this.lt))-i+"px")));i=a+o-1;if(this.options.wrap!="circular"&&this.options.size&&i>this.options.size)i=this.options.size;if(e>i){o=0;e=i;for(n=0;++o;){h=this.get(e--);if(!h.length)break;n+=this.dimension(h);if(n>=g)break}}e=i-o+ 1;this.options.wrap!="circular"&&e<1&&(e=1);if(this.inTail&&d)b+=this.tail,this.inTail=!1;this.tail=null;if(this.options.wrap!="circular"&&i==this.options.size&&i-o+1>=1&&(d=f.intval(this.get(i).css(!this.options.vertical?"marginRight":"marginBottom")),n-d>g))this.tail=n-g-d;if(c&&a===this.options.size&&this.tail)b-=this.tail,this.inTail=!0;for(;a-- >e;)b+=this.dimension(this.get(a));this.prevFirst=this.first;this.prevLast=this.last;this.first=e;this.last=i;return b},animate:function(a,c){if(!this.locked&& !this.animating){this.animating=!0;var b=this,d=function(){b.animating=!1;a===0&&b.list.css(b.lt,0);!b.autoStopped&&(b.options.wrap=="circular"||b.options.wrap=="both"||b.options.wrap=="last"||b.options.size===null||b.last<b.options.size||b.last==b.options.size&&b.tail!==null&&!b.inTail)&&b.startAuto();b.buttons();b.notify("onAfterAnimation");if(b.options.wrap=="circular"&&b.options.size!==null)for(var c=b.prevFirst;c<=b.prevLast;c++)c!==null&&!(c>=b.first&&c<=b.last)&&(c<1||c>b.options.size)&&b.remove(c)}; this.notify("onBeforeAnimation");if(!this.options.animation||c===!1)this.list.css(this.lt,a+"px"),d();else{var f=!this.options.vertical?this.options.rtl?{right:a}:{left:a}:{top:a},d={duration:this.options.animation,easing:this.options.easing,complete:d};if(g.isFunction(this.options.animationStepCallback))d.step=this.options.animationStepCallback;this.list.animate(f,d)}}},startAuto:function(a){if(a!==void 0)this.options.auto=a;if(this.options.auto===0)return this.stopAuto();if(this.timer===null){this.autoStopped= !1;var c=this;this.timer=window.setTimeout(function(){c.next()},this.options.auto*1E3)}},stopAuto:function(){this.pauseAuto();this.autoStopped=!0},pauseAuto:function(){if(this.timer!==null)window.clearTimeout(this.timer),this.timer=null},buttons:function(a,c){if(a==null&&(a=!this.locked&&this.options.size!==0&&(this.options.wrap&&this.options.wrap!="first"||this.options.size===null||this.last<this.options.size),!this.locked&&(!this.options.wrap||this.options.wrap=="first")&&this.options.size!==null&& this.last>=this.options.size))a=this.tail!==null&&!this.inTail;if(c==null&&(c=!this.locked&&this.options.size!==0&&(this.options.wrap&&this.options.wrap!="last"||this.first>1),!this.locked&&(!this.options.wrap||this.options.wrap=="last")&&this.options.size!==null&&this.first==1))c=this.tail!==null&&this.inTail;var b=this;this.buttonNext.size()>0?(this.buttonNext.unbind(this.options.buttonNextEvent+".jcarousel",this.funcNext),a&&this.buttonNext.bind(this.options.buttonNextEvent+".jcarousel",this.funcNext), this.buttonNext[a?"removeClass":"addClass"](this.className("jcarousel-next-disabled")).attr("disabled",a?!1:!0),this.options.buttonNextCallback!==null&&this.buttonNext.data("jcarouselstate")!=a&&this.buttonNext.each(function(){b.options.buttonNextCallback(b,this,a)}).data("jcarouselstate",a)):this.options.buttonNextCallback!==null&&this.buttonNextState!=a&&this.options.buttonNextCallback(b,null,a);this.buttonPrev.size()>0?(this.buttonPrev.unbind(this.options.buttonPrevEvent+".jcarousel",this.funcPrev), c&&this.buttonPrev.bind(this.options.buttonPrevEvent+".jcarousel",this.funcPrev),this.buttonPrev[c?"removeClass":"addClass"](this.className("jcarousel-prev-disabled")).attr("disabled",c?!1:!0),this.options.buttonPrevCallback!==null&&this.buttonPrev.data("jcarouselstate")!=c&&this.buttonPrev.each(function(){b.options.buttonPrevCallback(b,this,c)}).data("jcarouselstate",c)):this.options.buttonPrevCallback!==null&&this.buttonPrevState!=c&&this.options.buttonPrevCallback(b,null,c);this.buttonNextState= a;this.buttonPrevState=c},notify:function(a){var c=this.prevFirst===null?"init":this.prevFirst<this.first?"next":"prev";this.callback("itemLoadCallback",a,c);this.prevFirst!==this.first&&(this.callback("itemFirstInCallback",a,c,this.first),this.callback("itemFirstOutCallback",a,c,this.prevFirst));this.prevLast!==this.last&&(this.callback("itemLastInCallback",a,c,this.last),this.callback("itemLastOutCallback",a,c,this.prevLast));this.callback("itemVisibleInCallback",a,c,this.first,this.last,this.prevFirst, this.prevLast);this.callback("itemVisibleOutCallback",a,c,this.prevFirst,this.prevLast,this.first,this.last)},callback:function(a,c,b,d,f,j,e){if(!(this.options[a]==null||typeof this.options[a]!="object"&&c!="onAfterAnimation")){var h=typeof this.options[a]=="object"?this.options[a][c]:this.options[a];if(g.isFunction(h)){var i=this;if(d===void 0)h(i,b,c);else if(f===void 0)this.get(d).each(function(){h(i,this,d,b,c)});else for(var a=function(a){i.get(a).each(function(){h(i,this,a,b,c)})},k=d;k<=f;k++)k!== null&&!(k>=j&&k<=e)&&a(k)}}},create:function(a){return this.format("<li></li>",a)},format:function(a,c){for(var a=g(a),b=a.get(0).className.split(" "),d=0;d<b.length;d++)b[d].indexOf("jcarousel-")!=-1&&a.removeClass(b[d]);a.addClass(this.className("jcarousel-item")).addClass(this.className("jcarousel-item-"+c)).css({"float":this.options.rtl?"right":"left","list-style":"none"}).attr("jcarouselindex",c);return a},className:function(a){return a+" "+a+(!this.options.vertical?"-horizontal":"-vertical")}, dimension:function(a,c){var b=g(a);if(c==null)return!this.options.vertical?b.outerWidth(!0)||f.intval(this.options.itemFallbackDimension):b.outerHeight(!0)||f.intval(this.options.itemFallbackDimension);else{var d=!this.options.vertical?c-f.intval(b.css("marginLeft"))-f.intval(b.css("marginRight")):c-f.intval(b.css("marginTop"))-f.intval(b.css("marginBottom"));g(b).css(this.wh,d+"px");return this.dimension(b)}},clipping:function(){return!this.options.vertical?this.clip[0].offsetWidth-f.intval(this.clip.css("borderLeftWidth"))- f.intval(this.clip.css("borderRightWidth")):this.clip[0].offsetHeight-f.intval(this.clip.css("borderTopWidth"))-f.intval(this.clip.css("borderBottomWidth"))},index:function(a,c){if(c==null)c=this.options.size;return Math.round(((a-1)/c-Math.floor((a-1)/c))*c)+1}});f.extend({defaults:function(a){return g.extend(q,a||{})},intval:function(a){a=parseInt(a,10);return isNaN(a)?0:a},windowLoaded:function(){m=!0}});g.fn.jcarousel=function(a){if(typeof a=="string"){var c=g(this).data("jcarousel"),b=Array.prototype.slice.call(arguments, 1);return c[a].apply(c,b)}else return this.each(function(){var b=g(this).data("jcarousel");b?(a&&g.extend(b.options,a),b.reload()):g(this).data("jcarousel",new f(this,a))})}})(jQuery);
+</script>
+
+<script type="text/javascript">
+/* vxdCarousel, author: Hao Zeng, @haozeng */
+
+var vxdCarouselItemList = [
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_barilla_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011", title: "Barilla PLUS® Spaghetti"},
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_hersheys_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011", title: "Easy Chip and Nut Bread"},
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_sesame_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011", title: "Hot or Cold Sesame Noodles"},
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_roland_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794949011", title: "Curried Quinoa"},
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_mccormick_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6687018011", title: "Vanilla Rich Chocolate Chip Cookies"}
+];
+
+// count # of carousels, for autohight use
+var vxdCarouselCount = jQuery("#vxd-carousel-billboard-carousel").children().size();
+var vxdCurrentCarousel = -1;
+
+// initial callback that applies to every carousel 
+function vxdCarousel_initCallback(carousel) {
+	// Adding timer to delay hover event (trigger too fast)
+	var vxdCarouselTimer;
+	
+	jQuery('#vxd-carousel-billboard-control').show();
+	
+    jQuery('#vxd-carousel-billboard-control div.vxd-carousel-billboard-control-awrap').hover(
+    	function() {
+    		// change state, do not dehighlght after mouseout cause it conflicts with autohighligh
+    		jQuery(this).parent().find(".vxd-carousel-thumbnail").removeClass("active"); 
+    		jQuery(this).find(".vxd-carousel-thumbnail").addClass("active");
+    		vxdCurrentCarousel = jQuery(this).attr("id").slice(-1);
+    		// console.log ("vxdCurrentCarousel: " + vxdCurrentCarousel);
+    		
+    		// stop auto scroll when user is interacting with controller
+    		carousel.stopAuto();
+    		var scrollDestination = jQuery.jcarousel.intval(jQuery(this).attr("id").slice(-1));
+    		
+    		if (vxdCarouselTimer){
+	    		clearTimeout(vxdCarouselTimer);
+	    		vxdCarouselTimer = null;
+    		}
+    		vxdCarouselTimer = setTimeout(function(){
+	    		carousel.scroll(scrollDestination);
+	    		// console.log ("jump request sent: " + scrollDestination);
+    		}, 500)
+    	}, 
+    	function() { 
+	    	carousel.startAuto();
+	    	// do not dehighlght after mouseout cause it conflicts with autohighligh
+    	} 
+    );
+    
+    // stop auto scroll when user is interacting with image
+    carousel.clip.hover(function() {carousel.stopAuto();}, function() {carousel.startAuto();});
+
+    jQuery('.jcarousel-scroll select').bind('change', function() {
+        carousel.options.scroll = jQuery.jcarousel.intval(this.options[this.selectedIndex].value);
+        return false;
+    });
+
+};
+
+// autohighlight
+function vxdHighlight(carousel, objectLi, liIndex, liState){
+	 activeIndex = liIndex;
+	 //activeIndex = (liIndex - 1) % vxdCarouselCount + 1; // calculate which item this corresponds to after first scroll, commented out since this is not circular wrap
+	 // console.log (activeIndex);	 
+ 	jQuery('.vxd-carousel-billboard-control-awrap .vxd-carousel-thumbnail').removeClass("active");
+ 	jQuery("#vxdcontrol-"+ activeIndex + " .vxd-carousel-thumbnail").addClass("active");
+	 
+};
+
+// autoDehighlight
+function vxdRemoveHighlight(carousel, objectLi, liIndex, liState){
+     // no use, already dehighlted on previous function
+};
+
+function vxdCarouselItemLoadCallback(carousel, state)
+{
+    for (i = carousel.first; i <= carousel.last; i++) {
+        if (carousel.has(i)) {continue;}
+        if (i > vxdCarouselItemList.length) {break;}
+        carousel.add(i, vxdCarouselGetItemHTML(vxdCarouselItemList[i-1]));
+    }
+};
+
+function vxdCarouselGetItemHTML(item)
+{
+    return "<a href='" + item.link + "'><img src='" + item.url + "' alt='' /></a>";
+};
+
+function vxdCarouselRemoveLoading(){
+	jQuery("#vxd-carousel-loading").hide();
+}
+
+// carousel configuration
+jQuery(document).ready(function() {
+    jQuery("#vxdCarousel").jcarousel({
+        scroll: 1,
+        visible: 1,
+        wrap: 'both',
+        vertical: true,
+        auto: 5,
+        size: vxdCarouselItemList.length,
+        animation: 500,
+        initCallback: vxdCarousel_initCallback,
+        itemLoadCallback: {onBeforeAnimation: vxdCarouselItemLoadCallback, onAfterAnimation: vxdCarouselRemoveLoading },
+        // highlight before animation to prevent flickering control buttons
+        itemVisibleInCallback:  {onBeforeAnimation: vxdHighlight, onAfterAnimation: null },
+        itemVisibleOutCallback: vxdRemoveHighlight,
+        // This tells jCarousel NOT to autobuild prev/next buttons
+        buttonNextHTML: null,
+        buttonPrevHTML: null
+    });
+});
+
+</script>
+
+
+
+</div>
+
+	
+</body>
+</html>
+
+
+

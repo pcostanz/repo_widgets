@@ -1,0 +1,284 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+
+	<meta charset="UTF-8">
+	<title>AF Slider Widget</title>
+</head>
+<body>
+	
+
+
+	<style>
+
+.wrapper img {
+	border:none;
+}
+
+.tcgfader {
+	border: 0px solid #c0c0c0;
+	margin: 0px auto;
+	overflow: hidden;
+	position: relative;
+	width: 760px;
+	height: 525px;	
+}
+
+.tcgfader .container {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	top: 0;
+	width: 100%;
+}
+
+.tcgfader .container img {
+	position: relative;
+}
+
+
+.tcgfader .container img,
+.tcgfader .container a {
+	filter: inherit;
+}
+
+.tcgfader .slides {
+	list-style:none;
+}
+
+.tcgfader .slides li {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	top: 0;
+	width: 100%;
+	display:none;
+
+}
+
+.first {
+
+	display:inline !important;
+}
+
+
+
+.tcgfader span {
+	display:none;
+}
+
+.tcgfader a {
+	display:none;
+        outline: 0;
+}
+
+.tcgfader .nextbutton {
+    z-index: 1;
+	position: absolute;
+	height:42px;
+	width: 42px;
+	top: 214px;
+	right: 0;
+	background:no-repeat url(https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/SPRITE/dress_shop_sprite_2.png) -42px 0;
+}
+
+.tcgfader .nextbutton:hover {
+	background-position:-42px -42px;
+}
+
+.tcgfader .previousbutton {
+    z-index: 1;
+	position: absolute;
+	top: 214px;
+	left: 0;
+	height:42px;
+	width: 42px;
+	background:no-repeat url(https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/SPRITE/dress_shop_sprite_2.png);
+}
+
+.tcgfader .previousbutton:hover {
+	background-position:0 -42px; 
+}
+
+.tcgfader .cta {
+    z-index: 1;
+	position: absolute;
+	top: 360px;
+	left: 5%;
+	height: 64px;
+	width: 145px;
+	background:no-repeat url(https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/SPRITE/dress_shop_sprite_2.png) 0 -83px;
+}
+
+.tcgfader .cta:hover {
+	background:no-repeat url(https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/SPRITE/dress_shop_sprite_2.png) -147px -83px;
+}
+
+.tcgfader .copy1 {
+    display:none;
+    z-index: 1;
+	position: absolute;
+	top: 54px;
+	left: 56px;
+	height: 64px;
+	width: 145px;
+	background:no-repeat url(https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/SPRITE/dress_shop_sprite_2.png) 0 -151px;
+}
+
+
+.loadergif {
+	position: absolute;
+	z-index:2;
+	height:32px;
+	width: 32px;
+	top: 345px;
+	right: 50%;
+
+}
+
+	</style>
+	
+		<div class="wrapper">
+			
+			<div class="tcgfader">
+				<div class="container">
+					<img id="failsafe" src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/BILLBOARDS_ROTATOR/billboard_5.jpg" usemap="#slide1map"/>
+				</div>
+
+				
+						<a class="nextbutton" href="#" onclick="return nextPlease()"><span>Next</span></a>
+						<a class="previousbutton" href="#" onclick="return prevPlease()"><span>Back</span></a>
+						<a class="cta" href="amlink:/b/ref=clo_dresssp_rotator_cta?node=6453834011"><span>See More</span></a>
+						<div class="copy1"><span>Spring's Prettiest Dresses</span></div>
+				
+				<ul class="slides">
+					<li class="fade first">
+						
+						<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/BILLBOARDS_ROTATOR/billboard_.jpg"/>
+
+					</li>
+
+					<li class="slide">
+
+						<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/BILLBOARDS_ROTATOR/billboard_3.jpg" usemap="#slide1map"/>
+
+					</li>					
+					
+					<li class="slide">
+						
+						<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING2/WOMEN/2/BILLBOARDS_ROTATOR/billboard_5.jpg" usemap="#slide2map"/>
+					</li>
+									
+
+                   
+				</ul>
+
+
+
+			</div>
+
+		</div>
+		
+<map name="slide1map" id="slide1map">
+  <area shape="poly" coords="187,323,239,96,327,103,295,182,313,241,319,281,338,325,304,336,232,334" href="amlink:/dp/B00A17NYP0/ref=clo_dresssp_s1_dress1" />
+  <area shape="poly" coords="341,309,409,316,461,310,454,259,444,198,437,159,450,97,431,87,408,86,370,88,353,92,346,102,357,131,365,161,361,178,347,201,335,232,323,297" href="amlink:/dp/B00ATN5VNO/ref=clo_dresssp_s1_dress2" />
+  <area shape="poly" coords="521,336,578,325,590,281,570,170,569,122,567,88,540,90,481,95,472,118,462,324" href="amlink:/dp/B00ATCB1KM/ref=clo_dresssp_s1_dress3" />
+  <area shape="poly" coords="580,355,751,333,713,249,683,199,674,181,680,149,706,138,685,90,640,100,622,104,611,118,604,149,610,171,609,196,603,230,585,306" href="amlink:/dp/B00AIHX91M/ref=clo_dresssp_s1_dress4" />
+</map>
+
+<map name="slide2map" id="slide2map">
+  <area shape="poly" coords="200,108,145,164,146,177,200,233,193,332,237,346,296,337,290,206,305,129,326,108,322,84,233,84" href="amlink:/dp/B00A0K6YX2/ref=clo_dresssp_s2_dress1" />
+  <area shape="poly" coords="363,338,460,333,469,297,449,219,419,130,417,99,358,85,342,85,341,155,339,191" href="amlink:/dp/B00A16DVIG/ref=clo_dresssp_s2_dress2" />
+  <area shape="poly" coords="490,324,594,335,592,199,599,117,577,100,510,95,490,98" href="amlink:/dp/B006PF0PGI/ref=clo_dresssp_s2_dress3" />
+  <area shape="poly" coords="627,331,736,323,701,239,701,174,735,172,729,123,702,73,644,79,617,113,614,174,601,249" href="amlink:/dp/B00AJI0R9W/ref=clo_dresssp_s2_dress4" />
+</map>
+
+
+
+		<script>
+
+
+		jQuery(document).ready(function () {
+			// The failsafe is what will show before any javascript is executed, we need to hide it quickly since technically it will be the last slide loading during the animation. It references the same image map as the last slide so everything should be great in the case that the script fails.
+			jQuery('#failsafe').hide();
+
+		var totalSlides = jQuery('.slides > li').length;
+		var fadeDelay = 952;
+		var fadeTime = 900;	
+		var totalDelay = (fadeDelay*totalSlides);
+		var slideCount;
+
+
+		var fadeInSlideTimeout = function (){
+		
+		jQuery('.slides > li').each(function(slideCount,slideElem){
+        jQuery(slideElem).animate({top: 0}, (slideCount*fadeDelay)).fadeIn(fadeTime);
+		});
+		
+		}
+		
+		fadeInSlideTimeout();
+
+		var tcgFaderSlideTimeout = setTimeout (function() {
+      jQuery('#tcgfaderslides > li').each(function(slideCount,slideElem){
+        jQuery(slideElem).animate({top: 0}, (slideCount*fadeDelay)).fadeIn(fadeTime);
+      });
+    }, 450);
+	
+		var popCTATimeout = setTimeout(function() {
+			popCTA();
+		}, fadeDelay);
+		
+		
+		var popNavTimeout = setTimeout(function() {
+			jQuery('.slides > .fade').remove();
+			popNav();
+		}, totalDelay);
+		
+});
+
+		var removeLoader = function (){
+			jQuery('.loadergif').fadeOut(30);
+		}
+
+		var popCTA = function() {
+			jQuery('.tcgfader > .cta,.copy1').fadeIn(900);
+		}
+
+		var popNav = function(){
+			jQuery('.nextbutton, .previousbutton').fadeIn(100);
+		}
+
+		var nextPlease = function(){
+			jQuery('.slide:first').fadeOut(1, function(){
+
+				jQuery(this).detach().appendTo('.slides').fadeIn(300);
+
+			});
+
+			return false;
+		}
+
+
+		var prevPlease = function(){
+			jQuery('.slide:last').fadeOut(300, function(){
+
+				jQuery(this).detach().prependTo('.slides').fadeIn(1);
+			});
+
+			return false;
+		}
+
+
+
+		</script>	
+
+
+
+</body>
+</html>
