@@ -79,7 +79,7 @@
     margin-bottom: 10px;
     text-align: center;
     position: absolute;
-    right: 20px;
+    left: -200px;
     top: 20px;  
     z-index: 100;
     width: 250px;
@@ -96,9 +96,6 @@ zoom: 1;
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-container {
 	vertical-align: middle;
-	border-style: solid;
-	border-width: 0 1px 1px 1px;
-	border-color: #b7b7b7 #aaaaaa #a0a0a0;
 	text-align: center;
 	overflow: hidden;
 	max-width: 100%;
@@ -126,26 +123,18 @@ zoom: 1;
 	z-index: 1010;
 	padding: 10px;
 	overflow: hidden;
-	x-webkit-border-radius: 3px;
-	x-moz-border-radius: 3px;
-	xborder-radius: 3px;
-	x-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
-	x-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
 	background: #ececec;
-	background: -moz-linear-gradient(top, whitesmoke, #e3e3e3);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, whitesmoke), color-stop(100%, #e3e3e3));
-	background: -webkit-linear-gradient(top, whitesmoke, #e3e3e3);
-	background: -o-linear-gradient(top, whitesmoke, #e3e3e3);
-	background: -ms-linear-gradient(top, whitesmoke, #e3e3e3);
-	background: linear-gradient(top, whitesmoke, #e3e3e3);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='whitesmoke', endColorstr='#e3e3e3',GradientType=0);
 	zoom: 1;
+
+	-webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
 	
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail.active {
-	background: #fff;
+	background: grey;
 	filter: none;
 }
 
@@ -158,7 +147,7 @@ zoom: 1;
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-text{text-align: left;}
-#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text .vxd-carousel-thumbnail-title{color: #333; font-family: arial, sans-serif; font-size: 13px;}
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text .vxd-carousel-thumbnail-title{color: #333; font-family: arial, sans-serif; font-size: 18px;}
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-text .vxd-carousel-thumbnail-link{font-family: arial, sans-serif; font-size: 13px;}
 
 #vxd-carousel-billboard-control a:focus,
@@ -181,10 +170,9 @@ zoom: 1;
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-1">
 	      <div class="vxd-carousel-thumbnail-container first">
 		      <div class="vxd-carousel-thumbnail">
-			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Barilla_Spaghetti-99x55.jpg"/>
 			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Barilla PLUS® Spaghetti</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011">See Recipe</a>
+				      <span class="vxd-carousel-thumbnail-title">Juniors</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011">View Looks</a>
 			      </div>
 			      <div style="clear: both;"></div>
 		      </div>
@@ -194,10 +182,9 @@ zoom: 1;
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-2">
 	      <div class="vxd-carousel-thumbnail-container">
 		      <div class="vxd-carousel-thumbnail">
-			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Hershey_Bread-99x55.jpg"/>
 			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Easy Chip and Nut Bread</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011">See Recipe</a>
+				      <span class="vxd-carousel-thumbnail-title">Women</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011">View Looks</a>
 			      </div>
 			      <div style="clear: both"></div>
 		      </div>
@@ -207,36 +194,9 @@ zoom: 1;
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-3">
 	      <div class="vxd-carousel-thumbnail-container">
 		      <div class="vxd-carousel-thumbnail">
-			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Miracle_Noodle-99x55.jpg"/>
 			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Hot or Cold Sesame Noodles</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011">See Recipe</a>
-			      </div>
-			      <div style="clear: both"></div>
-		      </div>
-	      </div>
-      </div>
-      
-      <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-4">
-	      <div class="vxd-carousel-thumbnail-container">
-		      <div class="vxd-carousel-thumbnail">
-			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-Roland_Quinoa-99x55.jpg"/>
-			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Curried Quinoa</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794949011">See Recipe</a>
-			      </div>
-			      <div style="clear: both"></div>
-		      </div>
-	      </div>
-      </div>
-      
-      <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-5">
-	      <div class="vxd-carousel-thumbnail-container last">
-		      <div class="vxd-carousel-thumbnail">
-			      <img class="vxd-carousel-thumbnail-img" src="https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/Recipe_Slideshow-McCormick_Cookie-99x55.jpg"/>
-			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Vanilla Rich Chocolate Chip Cookies</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6687018011">See Recipe</a>
+				      <span class="vxd-carousel-thumbnail-title">Men</span><br/>
+				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011">View Looks</a>
 			      </div>
 			      <div style="clear: both"></div>
 		      </div>
@@ -286,11 +246,9 @@ var $=jQuery;
 /* vxdCarousel, author: Hao Zeng, @haozeng */
 
 var vxdCarouselItemList = [
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_barilla_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011", title: "Barilla PLUS® Spaghetti"},
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_hersheys_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011", title: "Easy Chip and Nut Bread"},
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_sesame_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011", title: "Hot or Cold Sesame Noodles"},
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_roland_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794949011", title: "Curried Quinoa"},
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/img13/grocery/projects/recipe/recipe_mccormick_770x480.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6687018011", title: "Vanilla Rich Chocolate Chip Cookies"}
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SPRING3/JUNIORS/V2_/billboard_.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011", title: "Barilla PLUS® Spaghetti"},
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_1/WOMEN/billboard_.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011", title: "Easy Chip and Nut Bread"},
+    {url: "https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_1/MEN/2/billboard_b.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011", title: "Hot or Cold Sesame Noodles"},
 ];
 
 // count # of carousels, for autohight use
@@ -323,7 +281,7 @@ function vxdCarousel_initCallback(carousel) {
     		vxdCarouselTimer = setTimeout(function(){
 	    		carousel.scroll(scrollDestination);
 	    		// console.log ("jump request sent: " + scrollDestination);
-    		}, 500)
+    		}, 200)
     	}, 
     	function() { 
 	    	carousel.startAuto();
@@ -380,7 +338,7 @@ jQuery(document).ready(function() {
         scroll: 1,
         visible: 1,
         wrap: 'both',
-        vertical: true,
+        vertical: false,
         auto: 5,
         size: vxdCarouselItemList.length,
         animation: 500,
