@@ -4,7 +4,7 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<meta charset="UTF-8">
-	<title>Hao's Recipe Widget</title>
+	<title>Fashion Slider Widget</title>
 </head>
 <body>
 
@@ -254,6 +254,7 @@ var vxdCarouselItemList = [
 // count # of carousels, for autohight use
 var vxdCarouselCount = jQuery("#vxd-carousel-billboard-carousel").children().size();
 var vxdCurrentCarousel = -1;
+var vxdCarouselDelay;
 
 // initial callback that applies to every carousel 
 function vxdCarousel_initCallback(carousel) {
@@ -278,10 +279,14 @@ function vxdCarousel_initCallback(carousel) {
 	    		clearTimeout(vxdCarouselTimer);
 	    		vxdCarouselTimer = null;
     		}
+
+    		// if the carousel is animating, set the delay to 350	
+    		vxdCarouselDelay = (carousel.animating) ? 350 : 0;
+
     		vxdCarouselTimer = setTimeout(function(){
 	    		carousel.scroll(scrollDestination);
-	    		// console.log ("jump request sent: " + scrollDestination);
-    		}, 200)
+	    		console.log ("jump request sent: " + scrollDestination + " delay = " + vxdCarouselDelay);
+    		}, vxdCarouselDelay)
     	}, 
     	function() { 
 	    	carousel.startAuto();
@@ -338,10 +343,10 @@ jQuery(document).ready(function() {
         scroll: 1,
         visible: 1,
         wrap: 'both',
-        vertical: false,
-        auto: 0,
+        vertical: true,
+        auto: 5,
         size: vxdCarouselItemList.length,
-        animation: 500,
+        animation: 350,
         initCallback: vxdCarousel_initCallback,
         itemLoadCallback: {onBeforeAnimation: vxdCarouselItemLoadCallback, onAfterAnimation: vxdCarouselRemoveLoading },
         // highlight before animation to prevent flickering control buttons
@@ -349,7 +354,7 @@ jQuery(document).ready(function() {
         itemVisibleOutCallback: vxdRemoveHighlight,
         // This tells jCarousel NOT to autobuild prev/next buttons
         buttonNextHTML: null,
-        buttonPrevHTML: null
+        buttonPrevHTML: null,
     });
 });
 
