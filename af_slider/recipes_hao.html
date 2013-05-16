@@ -84,6 +84,15 @@
     z-index: 100;
     width: 250px;
     display: none;
+
+
+	/* NOBODY BE SELECTIN DIS */
+    -webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
 }
 
 #vxd-carousel-billboard-control div.vxd-carousel-billboard-control-awrap {
@@ -95,35 +104,30 @@ zoom: 1;
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-container {
-	vertical-align: middle;
-	text-align: center;
 	overflow: hidden;
 	max-width: 100%;
 	text-decoration: none !important;
-	x-webkit-border-radius: 3px;
-	x-moz-border-radius: 3px;
-	xborder-radius: 3px;
+	border-bottom: 1px solid black;
 	padding: 0;
-	
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-container.first {
-	border-width: 1px 1px 1px 1px;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+	border-top: 1px solid black;
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-container.last {
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
+
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail {
+	text-align: left;
+	color: #333;
+	font-family: arial, sans-serif;
 	position: relative;
 	z-index: 1010;
 	padding: 10px;
 	overflow: hidden;
-	background: #ececec;
+	background: white;
 	zoom: 1;
 
 	-webkit-transition: all 0.25s ease;
@@ -134,21 +138,29 @@ zoom: 1;
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail.active {
-	background: grey;
+	background: black;
+	color: white;
+/*	margin-left: 8px;
+	padding-right: 8px;*/
 	filter: none;
 }
 
-#vxd-carousel-billboard-control .vxd-carousel-thumbnail-img{
-	float: left;
-	z-index: 1015;
-	margin-right: 8px;
-	border: 1px solid #fff;
-	padding:0;
+#vxd-carousel-billboard-control .vxd-carousel-thumbnail.active .vxd-carousel-thumbnail-title {
+
 }
 
-#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text{text-align: left;}
-#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text .vxd-carousel-thumbnail-title{color: #333; font-family: arial, sans-serif; font-size: 18px;}
-#vxd-carousel-billboard-control .vxd-carousel-thumbnail-text .vxd-carousel-thumbnail-link{font-family: arial, sans-serif; font-size: 13px;}
+
+.vxd-carousel-thumbnail .vxd-carousel-thumbnail-title{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.vxd-carousel-thumbnail .vxd-carousel-thumbnail-subtext{
+	font-size: 12px;
+}
+
+
+
 
 #vxd-carousel-billboard-control a:focus,
 #vxd-carousel-billboard-control a:active {
@@ -167,14 +179,16 @@ zoom: 1;
   <div class="vxd-carousel-billboard"><div id="vxdCarousel" class="jcarousel-container jcarousel-container-vertical">
     
     <div id="vxd-carousel-billboard-control">
+      <div class="vxd-carousel-billboard-header">
+		<span>Trends & Features:</span>
+      </div>
+
+
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-1">
 	      <div class="vxd-carousel-thumbnail-container first">
 		      <div class="vxd-carousel-thumbnail">
-			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Juniors</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011">View Looks</a>
-			      </div>
-			      <div style="clear: both;"></div>
+				    <span class="vxd-carousel-thumbnail-title">Prom Ready</span><br/>
+					<span class="vxd-carousel-thumbnail-subtext">Let's see what happens if we write too much in this area. What if I write even more more more here. Holy shit this guy is crazy, he's still writing more stuff in here.</span>
 		      </div>
 	      </div>
       </div>
@@ -182,11 +196,8 @@ zoom: 1;
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-2">
 	      <div class="vxd-carousel-thumbnail-container">
 		      <div class="vxd-carousel-thumbnail">
-			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Women</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011">View Looks</a>
-			      </div>
-			      <div style="clear: both"></div>
+				      <span class="vxd-carousel-thumbnail-title">White Dresses</span><br/>
+				      <span class="vxd-carousel-thumbnail-subtext">Yo girl, you want some white dresses for summer? We got those.</span>
 		      </div>
 	      </div>
       </div>
@@ -194,11 +205,8 @@ zoom: 1;
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-3">
 	      <div class="vxd-carousel-thumbnail-container last">
 		      <div class="vxd-carousel-thumbnail">
-			      <div class="vxd-carousel-thumbnail-text">
-				      <span class="vxd-carousel-thumbnail-title">Men</span><br/>
-				      <a class="vxd-carousel-thumbnail-link" href="amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011">View Looks</a>
-			      </div>
-			      <div style="clear: both"></div>
+				      <span class="vxd-carousel-thumbnail-title">Tanks & Board Shorts</span><br/>
+				      <span class="vxd-carousel-thumbnail-subtext">Get ready for the beach, these clothing items are the best clothing items.</span>
 		      </div>
 	      </div>
       </div>
@@ -254,7 +262,7 @@ var vxdCarouselItemList = [
 // count # of carousels, for autohight use
 var vxdCarouselCount = jQuery("#vxd-carousel-billboard-carousel").children().size();
 var vxdCurrentCarousel = -1;
-var vxdCarouselDelay;
+var vxdCarouselDelay = 250;
 
 // initial callback that applies to every carousel 
 function vxdCarousel_initCallback(carousel) {
@@ -281,7 +289,7 @@ function vxdCarousel_initCallback(carousel) {
     		}
 
     		// if the carousel is animating, set the delay to 350	
-    		vxdCarouselDelay = (carousel.animating) ? 350 : 0;
+    		// vxdCarouselDelay = (carousel.animating) ? 350 : 0;
 
     		vxdCarouselTimer = setTimeout(function(){
 	    		carousel.scroll(scrollDestination);
@@ -312,12 +320,10 @@ function vxdHighlight(carousel, objectLi, liIndex, liState){
  	jQuery('.vxd-carousel-billboard-control-awrap .vxd-carousel-thumbnail').removeClass("active");
  	jQuery("#vxdcontrol-"+ activeIndex + " .vxd-carousel-thumbnail").addClass("active");
 	 
+
 };
 
-// autoDehighlight
-function vxdRemoveHighlight(carousel, objectLi, liIndex, liState){
-     // no use, already dehighlted on previous function
-};
+
 
 function vxdCarouselItemLoadCallback(carousel, state)
 {
@@ -344,14 +350,13 @@ jQuery(document).ready(function() {
         visible: 1,
         wrap: 'both',
         vertical: true,
-        auto: 5,
+        auto: 3,
         size: vxdCarouselItemList.length,
-        animation: 350,
+        animation: 250,
         initCallback: vxdCarousel_initCallback,
         itemLoadCallback: {onBeforeAnimation: vxdCarouselItemLoadCallback, onAfterAnimation: vxdCarouselRemoveLoading },
         // highlight before animation to prevent flickering control buttons
         itemVisibleInCallback:  {onBeforeAnimation: vxdHighlight, onAfterAnimation: null },
-        itemVisibleOutCallback: vxdRemoveHighlight,
         // This tells jCarousel NOT to autobuild prev/next buttons
         buttonNextHTML: null,
         buttonPrevHTML: null,
