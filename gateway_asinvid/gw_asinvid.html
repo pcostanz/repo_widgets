@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<title>
+			Gateway ASIN Video
+		</title>
+
+	</head>
+	<body>
+		<!-- Begin ASIN Video Content-Symphony HTML/CSS/JS -->
+		<style type="text/css">
+
+		#asin-video-wrapper {
+
+		width: 660px;
+		height: 445px;
+		overflow: hidden;
+		position: relative;
+		background: red;
+		margin: 0 auto;
+
+		}
+
+		#asin-video-container {
+			float: right;
+			background: blue;
+			width: 342px;
+			height: 445px;
+		}
+
+		#asin-video-slate {
+			float: right;
+			width: 342px;
+			height: 445px;			
+		}
+		
+		#asin-video-png {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+		</style>
+		
+		<div id="asin-video-wrapper">
+			<div id="asin-video-png"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/GATEWAY/ASINvid/transparent._V384409275_.png" alt=""></div>
+			<div id="asin-video-slate"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/GATEWAY/ASINvid/asinvid-slate.jpg" alt=""></div>
+			<div id="asin-video-container"></div>
+
+		</div>
+
+
+
+		<script type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/vap/video/airy/prod/101.0-0/js/Airy.js"></script>
+		<script type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/vap/video/airy/prod/101.0-0/js/third-party.js"></script>
+
+		<script type="text/javascript">
+
+		var mediaCentralUrl = location.protocol;
+
+		var skinFileName = '';
+		if (location.protocol == 'https:') {
+			mediaCentralUrl += '//images-na.ssl-images-amazon.com';
+			skinFileName += 'FashionPlayerSkin-skin-Https._V373740224_.js';
+		} else {
+			mediaCentralUrl += '//ecx.images-amazon.com';
+			skinFileName += 'FashionPlayerSkin-skin._V373702642_.js';
+		}
+
+		var urls = [ mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/GATEWAY/ASINvid/asinvid.mp4', mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/VIDEO/amznfashion._V372256924_.ogv', mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/VIDEO/amznfashion._V372256927_.webm'];
+
+		var stage = 'prod';
+		var airyPlayer;
+		var playerInput = {
+			containerId: 'asin-video-container',
+			urls: urls,
+			width: 342,
+			height: 445,
+			stage: stage,
+			playerReadyCallback: function (player) {
+				airyPlayer = player;
+				player.play();
+				jQuery("#asin-vide-slate").css("visibility", "hidden");
+				player.bind('complete', function () {
+					jQuery("#asin-vide-slate").css("visibility", "visible");
+				});
+			},
+			flashWMode: "opaque",
+			skinJsonpUrl: mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/VIDEOS/' + skinFileName ,
+			swfUrl: mediaCentralUrl + '/images/G/01/vap/video/airy/prod/101.0-0/swf/AiryVideo._V373756406_.swf'
+		}
+
+		</script>
+
+		<!-- End ASIN Video Content-Symphony HTML/CSS/JS -->
+	</body>
+</html>

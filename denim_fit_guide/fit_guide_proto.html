@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ultimate Jeans Guide</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+</head>
+
+<style>
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.af-sdf-wrapper {
+	width: 780px;
+	margin: 0 auto;
+}
+
+.af-sdf-landing {
+	height: 600px;
+	background: white;
+}
+
+.af-sdf-landing-header {
+	height: 60px;
+	background: black;
+}
+
+.af-sdf-sticky-header {
+	width: 780px;
+	height: 60px;
+	background: black;
+}
+
+.af-sdf-sticky-header-active {
+	color: gray;
+	border-bottom: 4px solid white;
+}
+
+.af-sdf-sticky-header a {
+	color: white;
+	text-decoration: none;
+}
+
+.af-sdf-sticky-header a:hover {
+	color: gray;
+	border-bottom: 2px solid gray;
+}
+
+.af-sdf-sticky-header-links {
+	padding: 20px 0 0 50px;
+}
+
+.af-sdf-sticky-header ul {
+	list-style-type: none;
+	color: white;
+	margin: 0;
+}
+
+.af-sdf-sticky-header ul li {
+	display: inline;
+	margin: 0;
+}
+
+.af-sdf-sticky-header-left {
+	float: left;
+}
+
+.af-sdf-sticky-header-right {
+	float: right;
+}
+
+.af-sdf-content {
+
+}
+
+.af-sdf-content-sticky-offset {
+	margin-top: 60px;
+}
+
+.af-sdf-content-section {
+	height: 600px;
+	border-bottom: 1px solid black;
+	background: white;
+}
+
+.af-sdf-content-section-last {
+	height: 800px;
+	background: green;
+}
+
+.af-sdf-content-section-leftcol {
+	float: left;
+	margin: 20px 0 0 30px;
+}
+
+.af-sdf-accordion {
+	background: white;
+	width: 360px;
+}
+
+.af-sdf-accordion-header {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.af-sdf-accordion > div {
+	border-bottom: 1px solid black;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-text {
+	display: none;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-active div.af-sdf-accordion-text {
+	display: block;
+}
+
+</style>
+
+<body>
+
+<!-- overall content wrap -->
+<div class="af-sdf-wrapper">
+
+<!-- top landing page wrap -->
+<div class="af-sdf-landing">
+	<div class="af-sdf-landing-header">
+	</div>
+</div>
+
+<!-- main content wrap -->
+<div class="af-sdf-content">
+
+<div class="af-sdf-sticky-header">
+	<div class="af-sdf-sticky-header-left">
+		<ul class="af-sdf-sticky-header-links">
+			<li><a href="#slim">Slim</a></li>
+			<li><a href="#straight">Straight</a></li>
+			<li><a href="#relaxed">Relaxed</a></li>
+		</ul>
+	</div>
+
+	<div class="af-sdf-sticky-header-right">
+		<a href="#">ULTIMATE DENIM GUIDE</a>
+	</div>
+</div>	
+
+<div class="af-sdf-content-section" id="af-sdf-content-section1">
+	
+	<div class="af-sdf-content-section-leftcol">
+		<div class="af-sdf-content-title">
+			<img src="header.jpg">
+		</div>
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header"><span class="accordion-plus">+</span>HOW IT FITS</div>
+					<div class="af-sdf-accordion-text"><img src="accordion_1.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header"><span class="accordion-plus">+</span>WHAT TO WEAR</div>
+					<div class="af-sdf-accordion-text"><img src="accordion_1.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header"><span class="accordion-plus">+</span>HOW TO WEAR IT</div>
+					<div class="af-sdf-accordion-text"><img src="accordion_1.jpg"></div>
+				</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section2">
+
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section3">
+	
+</div>
+
+<div class="af-sdf-content-section-last" id="af-sdf-content-section4">
+	
+</div>
+
+
+</div>
+<!-- end main content wrap -->
+
+</div>
+<!-- end overall content wrap -->
+	
+</body>
+
+<script type="text/javascript">
+
+// initialize variables
+var scrollPosition;
+var offsetAmount = parseInt($('.af-sdf-sticky-header').css('height'), 10);
+
+// accordion click handler
+$(".af-sdf-accordion-header").click(function(){
+	$(".af-sdf-accordion-text").slideUp();
+		if(!$(this).next().is(":visible"))
+		{
+		$(this).next().slideDown();
+		}
+})
+
+
+// navigation click handler
+$('.af-sdf-sticky-header-links li').click(function(e){
+	e.preventDefault();
+	var navIndex = $(this).index()+1;
+	var navScrollDestination = "#af-sdf-content-section" + navIndex;
+	scrollToID(navScrollDestination, 500);
+});
+// nav scroll function
+function scrollToID(id, speed){
+	var targetOffset = $(id).offset().top-offsetAmount;
+	$('html,body').animate({scrollTop:targetOffset}, speed);
+}
+
+
+// sticky jquery
+	var offsetAmount = 60;
+	var stickyHeaderTop = $('.af-sdf-sticky-header').offset().top;
+	var section1top = $('#af-sdf-content-section1').offset().top-offsetAmount;
+	var section2top = $('#af-sdf-content-section2').offset().top-offsetAmount;
+	var section3top = $('#af-sdf-content-section3').offset().top-offsetAmount;
+	var section4top = $('#af-sdf-content-section4').offset().top-offsetAmount;
+       
+        $(window).scroll(function(){
+
+        		var scrollPosition = $(window).scrollTop();
+        		console.log(scrollPosition);
+
+        		// find position and stick menu
+                if( scrollPosition > stickyHeaderTop && scrollPosition <= section3top ) {
+                        $('.af-sdf-sticky-header').css({'position': 'fixed', 'top': '0'});
+                        $('.af-sdf-content').addClass('af-sdf-content-sticky-offset');
+                } 
+                else if ( scrollPosition > section3top) {
+               			$('.af-sdf-sticky-header').css({'position': 'absolute', 'top': section3top})
+                }
+
+                else {
+                        $('.af-sdf-content').removeClass('af-sdf-content-sticky-offset');
+                        $('.af-sdf-sticky-header').css({'position': 'static'});
+                }
+
+                // find position and highlight active in sticky nav
+                if ( section1top <= scrollPosition && scrollPosition < section2top ) { 
+                	$('.af-sdf-sticky-header a').removeClass('af-sdf-sticky-header-active')
+                	$('.af-sdf-sticky-header a:nth-child(1)').addClass('af-sdf-sticky-header-active');
+            	}
+
+                else if ( section2top <= scrollPosition && scrollPosition < section3top ) { 
+                	$('.af-sdf-sticky-header a').removeClass('af-sdf-sticky-header-active')
+                	$('#af-sdf-sticky-header-section2').addClass('af-sdf-sticky-header-active');
+            	}
+
+                else if ( section3top <= scrollPosition && scrollPosition < section4top ) { 
+                	$('.af-sdf-sticky-header a').removeClass('af-sdf-sticky-header-active')
+                	$('#af-sdf-sticky-header-section3').addClass('af-sdf-sticky-header-active');
+            	}
+
+
+        });
+</script>
+
+</html>

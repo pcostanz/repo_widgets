@@ -1,0 +1,572 @@
+<style>
+
+.af-left {
+	float: left;
+}
+
+.af-right {
+	float: right;
+}
+
+.af-sdf-wrapper {
+	width: 780px;
+	margin: 0 auto;
+}
+
+.af-sdf-wrapper ul {
+	list-style-type: none;
+	-webkit-padding-start: 0;
+	padding-left: 0;
+}
+
+.af-sdf-landing {
+	height: 560px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_cover.jpg') no-repeat;
+}
+
+.af-sdf-landing-header {
+	height: 42px;
+	background: black;
+
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 6px 6px -6px black;
+}
+
+.af-sdf-sticky-header {
+	width: 780px;
+	height: 42px;
+	background: black;
+
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 6px 6px -6px black;
+}
+
+.af-sdf-sticky-header ul {
+	list-style-type: none;
+	margin: 0;
+	margin-left: 32px;
+}
+
+.af-sdf-sticky-header ul li {
+	margin: 0;
+	height: 18px;
+	margin-right: 12px;
+}
+
+/*shopable links*/
+
+.af-sdf-shoppable-links {
+	margin: 350px 0 0 50px;
+}
+
+.af-sdf-shoppable-links ul {
+	list-style-type: none;
+	margin: 0;
+	-webkit-padding-start: 0px;
+}
+
+.af-sdf-shoppable-links ul li {
+	height: 22px;
+	margin: 0 0 5px 0;
+}
+
+
+.af-sdf-content-sticky-offset {
+	margin-top: 72px;
+}
+
+.af-sdf-content-section {
+	height: 560px;
+	border-bottom: 1px solid #DCDCDC;
+	margin-top: 30px;
+}
+
+
+.af-sdf-content-section-leftcol {
+	float: left;
+	margin: 20px 0 0 30px;
+}
+
+.af-sdf-content-section-centercol {
+	float: left;
+}
+
+.af-sdf-content-section-rightcol {
+	float: left;
+}
+
+.af-sdf-accordion {
+	width: 302px;
+	margin-top: 30px;
+}
+
+.af-sdf-accordion > div {
+	border-bottom: 1px solid black;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-text {
+	display: none;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-text img {
+	display: block;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-active div.af-sdf-accordion-text {
+	display: block;
+}
+
+/*sprites*/
+.af-sdf-model {
+	height: 550px;
+	width: 215px;
+}
+
+/*social header links*/
+.af-sdf-landing-header-social {
+	list-style: none;
+	margin: 13px 24px 0 0;
+}
+
+.af-sdf-landing-header-social li {
+	display: -moz-inline-stack; /*firefox 2 inline-block hack - needs to be before inline-block display*/
+	display: inline-block;
+	zoom: 1; /*ie6/7 inline-block hack*/
+	*display: inline; /*ie6/7 inline-block hack*/
+	cursor: pointer;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat;
+	width: 18px;
+	height: 16px;
+	margin-right: 8px;
+}
+
+.af-sdf-landing-header-social li.af-sprite-social-facebook {background-position: -13px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-facebook:hover {background-position: -13px -1338px;}
+.af-sdf-landing-header-social li.af-sprite-social-twitter {background-position: -46px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-twitter:hover {background-position: -46px -1338px;}
+.af-sdf-landing-header-social li.af-sprite-social-pinterest {background-position: -79px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-pinterest:hover {background-position: -79px -1338px;}
+.af-sdf-landing-header-social li.af-sprite-social-instagram {background-position: -112px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-instagram:hover {background-position: -112px -1338px;}
+
+/*sticky header links*/
+.af-sdf-sticky-header-links {
+	padding: 14px 0 0 0;
+}
+
+.af-sdf-sticky-header-links li {
+	display: -moz-inline-stack; /*firefox 2 inline-block hack - needs to be before inline-block display*/
+	display: inline-block;
+	zoom: 1; /*ie6/7 inline-block hack*/
+	*display: inline; /*ie6/7 inline-block hack*/
+	cursor: pointer;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat;
+
+}
+
+.af-sdf-sticky-header-links li.af-sprite-header-slim {width: 26px;background-position: -12px -262px;}
+.af-sdf-sticky-header-links li.af-sprite-header-slim:hover {width: 26px;background-position: -12px -285px;}
+.af-sdf-sticky-header-links li.af-sprite-header-straight {width: 46px;background-position: -56px -262px;}
+.af-sdf-sticky-header-links li.af-sprite-header-straight:hover {width: 46px;background-position: -56px -285px;}
+.af-sdf-sticky-header-links li.af-sprite-header-relaxed {width: 42px;background-position: -121px -262px;}
+.af-sdf-sticky-header-links li.af-sprite-header-relaxed:hover {width: 42px;background-position: -121px -285px;}
+
+.af-sdf-sticky-header-title {
+	margin: 11px 8px 0 0;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat;
+	background-position: -13px -336px;
+	height: 18px;
+	width: 170px;
+}
+
+.af-sdf-accordion-header {
+	cursor: pointer;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat;
+	margin: 14px 0 10px 0;
+	height: 26px;
+	width: 170px;
+}
+
+div.af-sprite-header-howitfits {background-position: -9px -506px;}
+div.af-sprite-header-whattowear {background-position: -9px -548px;}
+div.af-sprite-header-howtowear {background-position: -9px -590px;}
+
+/*landing links*/
+
+.af-sdf-landing-links {
+	width: 120px;
+	float: left;
+	margin: 339px 0 0 433px;
+}
+
+.af-sdf-landing-links ul li {
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat;
+	height: 18px;
+	margin-bottom: 24px;
+	margin-left: 0;
+}
+
+.af-sdf-landing-links li.af-sprite-landing-links-slim {width: 66px; background-position: 0 -15px;}
+.af-sdf-landing-links li.af-sprite-landing-links-slim:hover {background-position: 0 -135px;}
+.af-sdf-landing-links li.af-sprite-landing-links-straight {width: 102px; background-position: 0 -56px;}
+.af-sdf-landing-links li.af-sprite-landing-links-straight:hover {background-position: 0 -176px;}
+.af-sdf-landing-links li.af-sprite-landing-links-relaxed {width: 97px; background-position: 0 -97px;}
+.af-sdf-landing-links li.af-sprite-landing-links-relaxed:hover {background-position: 0 -217px;}
+
+/*shoppable links*/
+
+.af-sdf-shoppable-links .af-sdf-shoppable-links-title {
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat;
+	width: 90px;
+	height: 18px;
+	background-position: -13px -634px;
+	margin: 0 0 8px 6px;
+}
+
+.af-sdf-shoppable-links ul li {
+	cursor: pointer;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat;
+}
+
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-jeans {width: 94px;background-position: -18px -668px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-jeans:hover {background-position: -18px -780px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-blazers {width: 72px;background-position: -18px -696px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-blazers:hover {background-position: -18px -808px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-patternedshirts {width: 122px;background-position: -18px -724px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-patternedshirts:hover {background-position: -18px -836px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-suedeoxfords {width: 109px;background-position: -18px -752px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-suedeoxfords:hover {background-position: -18px -864px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-jeans {width: 109px;background-position: -18px -892px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-jeans:hover {background-position: -18px -976px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-sweaters {width: 83px;background-position: -18px -920px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-sweaters:hover {background-position: -18px -1004px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-tshirts {width: 74px;background-position: -18px -948px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-tshirts:hover {background-position: -18px -1032px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-jeans {width: 108px;background-position: -18px -1060px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-jeans:hover {background-position: -18px -1172px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-slimcutshirts {width: 113px;background-position: -18px -1088px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-slimcutshirts:hover {background-position: -18px -1200px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-canvasjackets {width: 114px;background-position: -18px -1116px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-canvasjackets:hover {background-position: -18px -1228px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-suedesneakers {width: 117px;background-position: -18px -1144px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-suedesneakers:hover {background-position: -18px -1256px;}
+
+.af-sdf-wrapper li a {display: block; height: 100%;}
+
+
+.af-sdf-accordion-plustoggle {
+	height: 26px; 
+	width: 26px; 
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/revised_sprite.png') no-repeat; 
+	background-position: -9px -506px;
+}
+
+.af-sprite-plus {
+	background-position: -9px -380px;
+}
+
+</style>
+
+<!-- overall content wrap -->
+<div class="af-sdf-wrapper">
+
+<!-- top landing page wrap -->
+<div class="af-sdf-landing">
+	<div class="af-sdf-landing-header">
+		<div class="af-right">
+			<ul class="af-sdf-landing-header-social">
+				<li class="af-sprite-social-facebook" title="Facebook"><a href="#facebook"></a></li>
+				<li class="af-sprite-social-twitter" title="Twitter"><a href="#twitter"></a></li>
+				<li class="af-sprite-social-pinterest" title="Pinterest"><a href="#pinterest"></a></li>
+				<li class="af-sprite-social-instagram" title="Instagram"><a href="#instagram"></a></li>
+			</ul>
+		</div>
+	</div>
+
+			<div class="af-sdf-landing-links">
+				<ul class="af-navlinks">
+					<li class="af-sprite-landing-links-slim"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-landing-links-straight"><a href="#slim-blazers"></a></li>
+					<li class="af-sprite-landing-links-relaxed"><a href="#slim-patterned"></a></li>
+				</ul>
+			</div>
+
+</div>
+
+<!-- main content wrap -->
+<div class="af-sdf-content">
+
+<div class="af-sdf-sticky-header">
+	<div class="af-left">
+		<ul class="af-sdf-sticky-header-links af-navlinks">
+			<li class="af-sprite-header-slim"><a href="#af-sdf-content-section1"></a></li>
+			<li class="af-sprite-header-straight"><a href="#af-sdf-content-section2"></a></li>
+			<li class="af-sprite-header-relaxed"><a href="#af-sdf-content-section3"></a></li>
+		</ul>
+	</div>
+
+	<div class="af-right">
+		<div class="af-sdf-sticky-header-title">
+
+		</div>
+	</div>
+</div>	
+
+<div class="af-sdf-content-section" id="af-sdf-content-section1">
+	
+	<div class="af-sdf-content-section-leftcol">
+		<div class="af-sdf-content-title">
+			<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/slim_header.jpg">
+		</div>
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-howitfits"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/slim_how_it_fits_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-whattowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/slim_what_to_wear_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-howtowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/slim_how_to_wear_03.jpg"></div>
+				</div>
+
+		</div>
+	</div>
+	<div class="af-sdf-content-section-centercol">
+		<div class="af-sdf-model"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/slim_guy_3.jpg" usemap="#af-sdf-slim-map">
+			
+		</div>
+	</div>
+
+		<div class="af-sdf-content-section-rightcol">
+			<div class="af-sdf-shoppable-links">
+				<div class="af-sdf-shoppable-links-title"></div>
+				<ul class="af-sdf-shoppable-links-list1">
+					<li class="af-sprite-shoppable-slim-jeans"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-shoppable-slim-blazers"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-shoppable-slim-patternedshirts"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-shoppable-slim-suedeoxfords"><a href="#amabot-link"></a></li>
+				</ul>
+			</div>
+		</div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section2">
+	<div class="af-sdf-content-section-leftcol">
+		<div class="af-sdf-content-title">
+			<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/straight_header.jpg">
+		</div>
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-howitfits"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/straight_how_it_fits_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-whattowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/straight_what_to_wear_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-howtowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/straight_how_to_wear_03.jpg"></div>
+				</div>
+
+		</div>
+	</div>
+	<div class="af-sdf-content-section-centercol">
+		<div class="af-sdf-model">
+		<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/straight_fit_guy_3.jpg" usemap="#af-sdf-straight-map">	
+		</div>
+	</div>
+
+		<div class="af-sdf-content-section-rightcol">
+			<div class="af-sdf-shoppable-links">
+				<div class="af-sdf-shoppable-links-title"></div>
+				<ul class="af-sdf-shoppable-links-list2">
+					<li class="af-sprite-shoppable-straight-jeans"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-shoppable-straight-sweaters"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-shoppable-straight-tshirts"><a href="#amabot-link"></a></li>
+				</ul>
+			</div>
+		</div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section3">
+	<div class="af-sdf-content-section-leftcol">
+		<div class="af-sdf-content-title">
+			<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/relaxed_header.jpg">
+		</div>
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-howitfits"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/relaxed_how_it_fits.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-whattowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/relaxed_what_to_wear.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-howtowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/relaxed_how_to_wear_03.jpg"></div>
+				</div>
+
+		</div>
+	</div>
+	<div class="af-sdf-content-section-centercol">
+		<div class="af-sdf-model">
+		<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/DENIM_GUIDE/relaxed_guy_2.jpg" usemap="#af-sdf-relaxed-map">	
+		</div>
+	</div>
+
+		<div class="af-sdf-content-section-rightcol">
+			<div class="af-sdf-shoppable-links">
+				<div class="af-sdf-shoppable-links-title"></div>
+				<ul class="af-sdf-shoppable-links-list3">
+					<li class="af-sprite-shoppable-relaxed-jeans"><a href="#amabot-link"></li>
+					<li class="af-sprite-shoppable-relaxed-slimcutshirts"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-shoppable-relaxed-canvasjackets"><a href="#amabot-link"></a></li>
+					<li class="af-sprite-shoppable-relaxed-suedesneakers"><a href="#amabot-link"></a></li>
+				</ul>
+			</div>
+		</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<!-- end main content wrap -->
+
+<!-- begin image maps -->
+<map name="af-sdf-slim-map" id="af-sdf-slim-map">
+  <area shape="poly" coords="126,196,95,281,77,278,60,273,54,257,53,192,69,129,76,103,88,93,121,75" href="#blazer-left" title="Shop This Blazer"/>
+  <area shape="poly" coords="147,268,142,238,142,192,158,111,165,82,201,103,211,127,215,199,216,260,213,282,176,289,157,285" href="#blazer-right" title="Shop This Blazer" />
+  <area shape="poly" coords="124,79,126,146,130,194,119,228,140,230,141,190,164,79" href="#shirt" title="Shop This Shirt"/>
+  <area shape="poly" coords="65,500,91,511,134,319,126,505,155,509,171,431,183,291,155,288,140,262,138,236,118,234,113,250,103,276,87,288,83,300,65,432" href="#pants" title="Shop These Pants" />
+  <area shape="poly" coords="61,506,49,537,72,542,88,535,128,534,137,544,158,540,163,532,153,514,129,510,88,512" href="#shoes" title="Shop These Shoes" />
+</map>
+
+<map name="af-sdf-straight-map" id="af-sdf-straight-map">
+  <area shape="poly" coords="62,266,55,178,94,86,132,73,152,57,159,95,179,101,187,81,199,101,219,121,226,171,224,226,205,278,181,266,139,261,94,267" href="#sweater" title="Shop This Sweater" />
+  <area shape="poly" coords="76,485,79,432,92,390,98,354,95,301,96,272,140,267,178,270,193,280,175,380,171,417,157,499,139,499,120,497,128,416,115,452,108,482,102,491" href="#jeans" title="Shop These Jeans" />
+  <area shape="poly" coords="64,525,76,534,97,534,139,537,174,544,185,536,165,519,155,508,124,507,99,498,75,493" href="#shoes" title="Shop These Shoes"/>
+</map>
+
+<map name="af-sdf-relaxed-map" id="af-sdf-relaxed-map">
+  <area shape="poly" coords="91,266,91,204,82,101,76,86,45,116,42,158,40,220,40,248,62,269" href="#jacket-left" title="Shop This Jacket"/>
+  <area shape="poly" coords="133,256,129,186,124,118,121,69,147,81,178,92,194,121,209,168,203,203,177,203,174,182,173,214,184,259" href="#jacket-right" title="Shop This Jacket"/>
+  <area shape="poly" coords="84,94,90,180,93,240,131,251,128,187,120,80,108,115" href="#shirt" title="Shop This Shirt"/>
+  <area shape="poly" coords="66,276,70,366,89,509,119,516,133,504,146,508,160,450,160,377,168,271,113,252,94,243,95,267" href="#pants" title="Shop These Pants" />
+  <area shape="poly" coords="77,538,89,544,113,535,125,526,141,533,160,535,155,519,137,511,124,518,104,518,92,513,78,527" href="#shoes" title="Shop These Shoes" />
+</map>
+
+<!-- end image maps -->
+
+
+</div>
+<!-- end overall content wrap -->
+
+<script type="text/javascript">
+
+amznJQ.available('jQuery', function() {
+
+var scrollPosition;
+var offsetAmount = parseInt(jQuery('.af-sdf-sticky-header').css('height'), 10);
+var isMobile = {
+    Android: function() {return navigator.userAgent.match(/cloud9|Android|silk-accelerated/i);
+    },
+    BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+// accordion clicks
+jQuery(".af-sdf-accordion-header").click(function(){
+	jQuery(this).parent().siblings().children('.af-sdf-accordion-text').slideUp();
+		
+		if(!jQuery(this).next().is(":visible"))
+
+		{
+			jQuery(this).next().slideDown();
+			jQuery(this).children('.af-sdf-accordion-plustoggle').addClass('af-sprite-plus');
+			jQuery(this).parent().siblings().children('.af-sdf-accordion-header').children('.af-sdf-accordion-plustoggle').removeClass('af-sprite-plus');
+		}
+})
+
+
+// navigation clicks
+jQuery('.af-navlinks li').click(function(e){
+	e.preventDefault();
+	var navIndex = jQuery(this).index()+1;
+	var navScrollDestination = "#af-sdf-content-section" + navIndex;
+	scrollToID(navScrollDestination, 500);
+});
+// nav scroll function
+function scrollToID(id, speed){
+	var targetOffset = jQuery(id).offset().top-offsetAmount;
+	jQuery('html,body').animate({scrollTop:targetOffset}, speed);
+}
+
+
+
+// stickynav
+	var stickyHeaderTop = jQuery('.af-sdf-sticky-header').offset().top;
+	var section1top = jQuery('#af-sdf-content-section1').offset().top-offsetAmount;
+	var section2top = jQuery('#af-sdf-content-section2').offset().top-offsetAmount;
+	var section3top = jQuery('#af-sdf-content-section3').offset().top-offsetAmount;
+       
+	jQuery(window).scroll(function(){
+		if(!isMobile.any() ) stickyNav();
+    });
+		
+// stickynav function
+function stickyNav() {
+	var scrollPosition = jQuery(window).scrollTop();
+	
+    if( scrollPosition > stickyHeaderTop && scrollPosition <= section3top ) {
+        jQuery('.af-sdf-sticky-header').css({'position': 'fixed', 'top': '0'});
+        jQuery('.af-sdf-content').addClass('af-sdf-content-sticky-offset');
+    } 
+    else if ( scrollPosition > section3top) {
+        jQuery('.af-sdf-sticky-header').css({'position': 'absolute', 'top': section3top})
+    }
+
+    else {
+        jQuery('.af-sdf-content').removeClass('af-sdf-content-sticky-offset');
+        jQuery('.af-sdf-sticky-header').css({'position': 'static'});
+    }
+}
+		
+		
+		
+});
+
+</script>

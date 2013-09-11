@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ultimate Jeans Guide</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+</head>
+
+<style>
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.af-left {
+	float: left;
+}
+
+.af-right {
+	float: right;
+}
+
+.af-sdf-wrapper {
+	width: 780px;
+	margin: 0 auto;
+}
+
+.af-sdf-wrapper ul {
+	list-style-type: none;
+	-webkit-padding-start: 0px;
+}
+
+.af-sdf-landing {
+	height: 560px;
+	background: url(denim_guide_cover.jpg) no-repeat;
+	background-position-y: 42px;
+}
+
+.af-sdf-landing-header {
+	height: 42px;
+	background: black;
+
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 6px 6px -6px black;
+}
+
+.af-sdf-sticky-header {
+	width: 780px;
+	height: 42px;
+	background: black;
+
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 6px 6px -6px black;
+}
+
+.af-sdf-sticky-header ul {
+	list-style-type: none;
+	margin: 0;
+	margin-left: 32px;
+}
+
+.af-sdf-sticky-header ul li {
+	margin: 0;
+	height: 18px;
+	margin-right: 12px;
+}
+
+/*shopable links*/
+
+.af-sdf-shoppable-links {
+	margin: 350px 0 0 50px;
+}
+
+.af-sdf-shoppable-links ul {
+	list-style-type: none;
+	margin: 0;
+	-webkit-padding-start: 0px;
+}
+
+.af-sdf-shoppable-links ul li {
+	height: 22px;
+	margin: 0 0 5px 0;
+}
+
+
+.af-sdf-content-sticky-offset {
+	margin-top: 72px;
+}
+
+.af-sdf-content-section {
+	height: 560px;
+	border-bottom: 1px solid #DCDCDC;
+	margin-top: 30px;
+}
+
+
+.af-sdf-content-section-leftcol {
+	float: left;
+	margin: 20px 0 0 30px;
+}
+
+.af-sdf-content-section-centercol {
+	float: left;
+}
+
+.af-sdf-content-section-rightcol {
+	float: left;
+}
+
+.af-sdf-accordion {
+	width: 302px;
+	margin-top: 30px;
+}
+
+.af-sdf-accordion > div {
+	border-bottom: 1px solid black;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-text {
+	display: none;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-text img {
+	display: block;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-active div.af-sdf-accordion-text {
+	display: block;
+}
+
+/*sprites*/
+.af-sdf-slim-body {
+	background: url('af-sdf-sprite.png') no-repeat;
+	background-position: -190px -572px;
+	height: 550px;
+	width: 215px;
+	float: left;
+}
+
+.af-sdf-straight-body {
+	background: url('af-sdf-sprite.png') no-repeat;
+	background-position: -180px -1145px;
+	height: 550px;
+	width: 215px;
+	float: left;
+}
+
+.af-sdf-relaxed-body {
+	background: url('af-sdf-sprite.png') no-repeat;
+	background-position: -190px 0;
+	height: 550px;
+	width: 215px;
+	float: left;
+}
+
+/*social header links*/
+.af-sdf-landing-header-social {
+	list-style: none;
+	margin: 13px 24px 0 0;
+}
+
+.af-sdf-landing-header-social li {
+	display: inline-block;
+	cursor: pointer;
+	background: url('af-sdf-sprite.png') no-repeat;
+	width: 18px;
+	height: 16px;
+	margin-right: 8px;
+}
+
+.af-sdf-landing-header-social li.af-sprite-social-facebook {background-position: -13px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-facebook:hover {background-position: -13px -1338px;}
+.af-sdf-landing-header-social li.af-sprite-social-twitter {background-position: -46px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-twitter:hover {background-position: -46px -1338px;}
+.af-sdf-landing-header-social li.af-sprite-social-pinterest {background-position: -79px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-pinterest:hover {background-position: -79px -1338px;}
+.af-sdf-landing-header-social li.af-sprite-social-instagram {background-position: -112px -1306px;}
+.af-sdf-landing-header-social li.af-sprite-social-instagram:hover {background-position: -112px -1338px;}
+
+/*sticky header links*/
+.af-sdf-sticky-header-links {
+	padding: 14px 0 0 40px;
+}
+
+.af-sdf-sticky-header-links li {
+	/*might need ie fix for inline-block*/
+	display: inline-block;
+	cursor: pointer;
+	background: url('af-sdf-sprite.png') no-repeat;
+
+}
+
+.af-sdf-sticky-header-links li.af-sprite-header-slim {width: 26px;background-position: -12px -262px;}
+.af-sdf-sticky-header-links li.af-sprite-header-slim:hover {width: 26px;background-position: -12px -285px;}
+.af-sdf-sticky-header-links li.af-sprite-header-straight {width: 46px;background-position: -56px -262px;}
+.af-sdf-sticky-header-links li.af-sprite-header-straight:hover {width: 46px;background-position: -56px -285px;}
+.af-sdf-sticky-header-links li.af-sprite-header-relaxed {width: 42px;background-position: -121px -262px;}
+.af-sdf-sticky-header-links li.af-sprite-header-relaxed:hover {width: 42px;background-position: -121px -285px;}
+
+.af-sdf-sticky-header-title {
+	margin: 11px 8px 0 0;
+	background: url('af-sdf-sprite.png') no-repeat;
+	background-position: -13px -336px;
+	height: 18px;
+	width: 170px;
+}
+
+.af-sdf-accordion-header {
+	cursor: pointer;
+	background: url('af-sdf-sprite.png') no-repeat;
+	margin: 14px 0 10px 0;
+	height: 26px;
+	width: 170px;
+}
+
+div.af-sprite-header-howitfits {background-position: -9px -506px;}
+div.af-sprite-header-whattowear {background-position: -9px -548px;}
+div.af-sprite-header-howtowear {background-position: -9px -590px;}
+
+/*landing links*/
+
+.af-sdf-landing-links {
+	width: 120px;
+	float: left;
+	margin: 338px 0 0 381px;
+}
+
+.af-sdf-landing-links ul li {
+	background: url('af-sdf-sprite.png') no-repeat;
+	height: 18px;
+	margin-bottom: 15px;
+	margin-left: 0;
+}
+
+.af-sdf-landing-links li.af-sprite-landing-links-slim {width: 66px; background-position: 0 -15px;}
+.af-sdf-landing-links li.af-sprite-landing-links-slim:hover {background-position: 0 -135px;}
+.af-sdf-landing-links li.af-sprite-landing-links-straight {width: 102px; background-position: 0 -56px;}
+.af-sdf-landing-links li.af-sprite-landing-links-straight:hover {background-position: 0 -176px;}
+.af-sdf-landing-links li.af-sprite-landing-links-relaxed {width: 97px; background-position: 0 -97px;}
+.af-sdf-landing-links li.af-sprite-landing-links-relaxed:hover {background-position: 0 -217px;}
+
+/*shoppable links*/
+
+.af-sdf-shoppable-links .af-sdf-shoppable-links-title {
+	background: url('af-sdf-sprite.png') no-repeat;
+	width: 90px;
+	height: 18px;
+	background-position: -13px -634px;
+	margin: 0 0 8px 6px;
+}
+
+.af-sdf-shoppable-links ul li {
+	cursor: pointer;
+	background: url('af-sdf-sprite.png') no-repeat;
+}
+
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-jeans {width: 94px;background-position: -18px -668px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-jeans:hover {background-position: -18px -780px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-blazers {width: 72px;background-position: -18px -696px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-blazers:hover {background-position: -18px -808px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-patternedshirts {width: 122px;background-position: -18px -724px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-patternedshirts:hover {background-position: -18px -836px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-suedeoxfords {width: 109px;background-position: -18px -752px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-slim-suedeoxfords:hover {background-position: -18px -864px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-jeans {width: 109px;background-position: -18px -892px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-jeans:hover {background-position: -18px -976px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-sweaters {width: 83px;background-position: -18px -920px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-sweaters:hover {background-position: -18px -1004px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-tshirts {width: 74px;background-position: -18px -948px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-straight-tshirts:hover {background-position: -18px -1032px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-jeans {width: 108px;background-position: -18px -1060px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-jeans:hover {background-position: -18px -1172px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-slimcutshirts {width: 113px;background-position: -18px -1088px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-slimcutshirts:hover {background-position: -18px -1200px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-canvasjackets {width: 114px;background-position: -18px -1116px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-canvasjackets:hover {background-position: -18px -1228px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-suedesneakers {width: 117px;background-position: -18px -1144px;}
+.af-sdf-shoppable-links li.af-sprite-shoppable-relaxed-suedesneakers:hover {background-position: -18px -1256px;}
+
+.af-sdf-wrapper li a {display: block; height: 100%;}
+
+
+.af-sdf-accordion-plustoggle {
+	height: 26px; 
+	width: 26px; 
+	background: url('af-sdf-sprite.png') no-repeat; 
+	background-position: -9px -506px;
+}
+
+.af-sprite-plus {
+	background-position: -9px -380px;
+}
+
+</style>
+
+<body>
+
+<!-- overall content wrap -->
+<div class="af-sdf-wrapper">
+
+<!-- top landing page wrap -->
+<div class="af-sdf-landing">
+	<div class="af-sdf-landing-header">
+		<div class="af-right">
+			<ul class="af-sdf-landing-header-social">
+				<li class="af-sprite-social-facebook" title="Facebook"><a href="#facebook"></a></li>
+				<li class="af-sprite-social-twitter" title="Twitter"><a href="#twitter"></a></li>
+				<li class="af-sprite-social-pinterest" title="Pinterest"><a href="#pinterest"></a></li>
+				<li class="af-sprite-social-instagram" title="Instagram"><a href="#instagram"></a></li>
+			</ul>
+		</div>
+	</div>
+
+			<div class="af-sdf-landing-links">
+				<ul class="af-navlinks">
+					<li class="af-sprite-landing-links-slim"><a href="#slim-jeans"></a></li>
+					<li class="af-sprite-landing-links-straight"><a href="#slim-blazers"></a></li>
+					<li class="af-sprite-landing-links-relaxed"><a href="#slim-patterned"></a></li>
+				</ul>
+			</div>
+
+</div>
+
+<!-- main content wrap -->
+<div class="af-sdf-content">
+
+<div class="af-sdf-sticky-header">
+	<div class="af-left">
+		<ul class="af-sdf-sticky-header-links af-navlinks">
+			<li class="af-sprite-header-slim"><a href="#slim"></a></li>
+			<li class="af-sprite-header-straight"><a href="#straight"></a></li>
+			<li class="af-sprite-header-relaxed"><a href="#relaxed"></a></li>
+		</ul>
+	</div>
+
+	<div class="af-right">
+		<div class="af-sdf-sticky-header-title">
+
+		</div>
+	</div>
+</div>	
+
+<div class="af-sdf-content-section" id="af-sdf-content-section1">
+	
+	<div class="af-sdf-content-section-leftcol">
+		<div class="af-sdf-content-title">
+			<img src="slim_header.jpg">
+		</div>
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-howitfits"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text"><img src="slim_how_it_fits_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-whattowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="slim_what_to_wear_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-howtowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="slim_how_to_wear_03.jpg"></div>
+				</div>
+
+		</div>
+	</div>
+	<div class="af-sdf-content-section-centercol">
+		<div class="af-sdf-slim-body">
+			
+		</div>
+	</div>
+
+		<div class="af-sdf-content-section-rightcol">
+			<div class="af-sdf-shoppable-links">
+				<div class="af-sdf-shoppable-links-title"></div>
+				<ul class="af-sdf-shoppable-links-list1">
+					<li class="af-sprite-shoppable-slim-jeans"><a href="#slim-jeans"></a></li>
+					<li class="af-sprite-shoppable-slim-blazers"><a href="#slim-blazers"></a></li>
+					<li class="af-sprite-shoppable-slim-patternedshirts"><a href="#slim-patterned"></a></li>
+					<li class="af-sprite-shoppable-slim-suedeoxfords"><a href="#slim-suede"></a></li>
+				</ul>
+			</div>
+		</div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section2">
+	<div class="af-sdf-content-section-leftcol">
+		<div class="af-sdf-content-title">
+			<img src="straight_header.jpg">
+		</div>
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-howitfits"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text"><img src="straight_how_it_fits_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-whattowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="straight_what_to_wear_03.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-howtowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="straight_how_to_wear_03.jpg"></div>
+				</div>
+
+		</div>
+	</div>
+	<div class="af-sdf-content-section-centercol">
+		<div class="af-sdf-straight-body">
+			
+		</div>
+	</div>
+
+		<div class="af-sdf-content-section-rightcol">
+			<div class="af-sdf-shoppable-links">
+				<div class="af-sdf-shoppable-links-title"></div>
+				<ul class="af-sdf-shoppable-links-list2">
+					<li class="af-sprite-shoppable-straight-jeans"></li>
+					<li class="af-sprite-shoppable-straight-sweaters"></li>
+					<li class="af-sprite-shoppable-straight-tshirts"></li>
+				</ul>
+			</div>
+		</div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section3">
+	<div class="af-sdf-content-section-leftcol">
+		<div class="af-sdf-content-title">
+			<img src="relaxed_header.jpg">
+		</div>
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-howitfits"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text"><img src="relaxed_how_it_fits.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-whattowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="relaxed_what_to_wear.jpg"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-howtowear"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text"><img src="relaxed_how_to_wear_03.jpg"></div>
+				</div>
+
+		</div>
+	</div>
+	<div class="af-sdf-content-section-centercol">
+		<div class="af-sdf-relaxed-body">
+			
+		</div>
+	</div>
+
+		<div class="af-sdf-content-section-rightcol">
+			<div class="af-sdf-shoppable-links">
+				<div class="af-sdf-shoppable-links-title"></div>
+				<ul class="af-sdf-shoppable-links-list3">
+					<li class="af-sprite-shoppable-relaxed-jeans"></li>
+					<li class="af-sprite-shoppable-relaxed-slimcutshirts"></li>
+					<li class="af-sprite-shoppable-relaxed-canvasjackets"></li>
+					<li class="af-sprite-shoppable-relaxed-suedesneakers"></li>
+				</ul>
+			</div>
+		</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<!-- end main content wrap -->
+
+</div>
+<!-- end overall content wrap -->
+	
+</body>
+
+<script type="text/javascript">
+
+// initialize variables
+var scrollPosition;
+var offsetAmount = parseInt($('.af-sdf-sticky-header').css('height'), 10);
+
+// accordion click handler
+$(".af-sdf-accordion-header").click(function(){
+	$(this).parent().siblings().children('.af-sdf-accordion-text').slideUp();
+		
+		if(!$(this).next().is(":visible"))
+
+		{
+			$(this).next().slideDown();
+			$(this).children('.af-sdf-accordion-plustoggle').addClass('af-sprite-plus');
+			$(this).parent().siblings().children('.af-sdf-accordion-header').children('.af-sdf-accordion-plustoggle').removeClass('af-sprite-plus');
+		}
+})
+
+
+// navigation click handler
+$('.af-navlinks li').click(function(e){
+	e.preventDefault();
+	var navIndex = $(this).index()+1;
+	var navScrollDestination = "#af-sdf-content-section" + navIndex;
+	scrollToID(navScrollDestination, 500);
+});
+// nav scroll function
+function scrollToID(id, speed){
+	var targetOffset = $(id).offset().top-offsetAmount;
+	$('html,body').animate({scrollTop:targetOffset}, speed);
+}
+
+
+// Sticky Nav
+	var stickyHeaderTop = $('.af-sdf-sticky-header').offset().top;
+	var section1top = $('#af-sdf-content-section1').offset().top-offsetAmount;
+	var section2top = $('#af-sdf-content-section2').offset().top-offsetAmount;
+	var section3top = $('#af-sdf-content-section3').offset().top-offsetAmount;
+       
+        $(window).scroll(function(){
+
+        		var scrollPosition = $(window).scrollTop();
+
+        		// find current position and stick the menu if we scroll past the top of the first page
+                if( scrollPosition > stickyHeaderTop && scrollPosition <= section3top ) {
+                        $('.af-sdf-sticky-header').css({'position': 'fixed', 'top': '0'});
+                        $('.af-sdf-content').addClass('af-sdf-content-sticky-offset');
+                } 
+                else if ( scrollPosition > section3top) {
+               			$('.af-sdf-sticky-header').css({'position': 'absolute', 'top': section3top})
+                }
+
+                else {
+                        $('.af-sdf-content').removeClass('af-sdf-content-sticky-offset');
+                        $('.af-sdf-sticky-header').css({'position': 'static'});
+                }
+
+        });
+</script>
+
+</html>

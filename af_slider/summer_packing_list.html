@@ -20,7 +20,7 @@
 }
 
 .vxd-carousel-billboard {
-	width: 770px;
+	width: 760px;
 	margin: 0 auto;
 	zoom: 1;
 }
@@ -35,8 +35,8 @@
 }
 
 .vxd-carousel-billboard .jcarousel-container-vertical {
-    width: 770px;
-    height: 480px;
+    width: 760px;
+    height: 300px;
     padding: 0;
 }
 
@@ -50,13 +50,14 @@
 
 
 .vxd-carousel-billboard .jcarousel-clip-vertical {
-    width:  770px;
-    height: 480px;
+    width:  760px;
+    height: 300px;
 }
 
 .vxd-carousel-billboard .jcarousel-item {
-   	width:  770px;
-    height: 480px;
+	margin-left: 220px;
+   	width:  540px;
+    height: 300px;
 }
 
 .vxd-carousel-billboard .jcarousel-item-vertical {
@@ -79,11 +80,14 @@
     margin-bottom: 10px;
     text-align: center;
     position: absolute;
-    left: -200px;
-    top: 20px;  
+    left: 0px;
+    top: 0px;  
     z-index: 100;
-    width: 250px;
+    width: 220px;
     display: none;
+	
+/*	should we rock a box shadow here to distinguish the menu?
+    box-shadow: 0px 2px 3px 2px #F2F2F2;*/
 
 
 	/* NOBODY BE SELECTIN DIS */
@@ -107,17 +111,17 @@ zoom: 1;
 	overflow: hidden;
 	max-width: 100%;
 	text-decoration: none !important;
-	border-bottom: 1px solid #242424;
 	padding: 0;
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-container.first {
-	border-top: 1px solid #101010;
+
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail-container.last {
 
 }
+
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail {
 	text-align: left;
@@ -125,10 +129,12 @@ zoom: 1;
 	font-family: arial, sans-serif;
 	position: relative;
 	z-index: 1010;
-	padding: 10px;
 	overflow: hidden;
 	background: white;
 	zoom: 1;
+	height: 100px;
+	width: 220px;
+
 
 	-webkit-transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
@@ -137,22 +143,11 @@ zoom: 1;
 	
 }
 
-#vxd-carousel-billboard-control .vxd-carousel-header {
-	text-align: left;
-	color: #333;
-	font-family: arial, sans-serif;
-	font-size: 14px;
-	padding: 0 0 10px 10px;
-	position: relative;
-	
-}
-
+/*this sets the active state for the navigation*/
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail.active {
-	background: #242424;
-	color: white;
-/*	margin-left: 8px;
-	padding-right: 8px;*/
+	/*margin-left: 8px;*/
 	filter: none;
+	background: #f2f2f2;
 }
 
 #vxd-carousel-billboard-control .vxd-carousel-thumbnail.active .vxd-carousel-thumbnail-title {
@@ -170,8 +165,6 @@ zoom: 1;
 }
 
 
-
-
 #vxd-carousel-billboard-control a:focus,
 #vxd-carousel-billboard-control a:active {
     outline: none;
@@ -182,23 +175,37 @@ zoom: 1;
     text-align: center;
 }
 
+#vxdcontrol-1 {
+	background: #252d57;
+}
+
+#vxdcontrol-2 {
+	background: #b3001e;
+}
+
+#vxdcontrol-3 {
+	background: #ebe700;
+}
+
+
 </style>
+
+<div style="text-align: center;">
+	<img src="SPL_header.jpg" alt="">
+</div>
+
 
 <div id="vxd-wrap">
 	
   <div class="vxd-carousel-billboard"><div id="vxdCarousel" class="jcarousel-container jcarousel-container-vertical">
     
     <div id="vxd-carousel-billboard-control">
-      <div class="vxd-carousel-header">
-		<span>Summer Trends & Features</span>
-      </div>
-
-
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-1">
 	      <div class="vxd-carousel-thumbnail-container first">
 		      <div class="vxd-carousel-thumbnail">
-				      <span class="vxd-carousel-thumbnail-title">Little White Dresses</span><br/>
-				      <span class="vxd-carousel-thumbnail-subtext">Yo girl, you want some white dresses for summer? We got those, fo real.</span>
+		      		<img style="" src="SPL_story_1_control.png" alt="">
+				      <span class="vxd-carousel-thumbnail-title">Story 1</span><br/>
+				      <span style="position: absolute; top: 60px; left: 2px;" class="vxd-carousel-thumbnail-subtext">Testing this can have a bunch of text here and it will show up</span>
 		      </div>
 	      </div>
       </div>
@@ -206,8 +213,9 @@ zoom: 1;
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-2">
 	      <div class="vxd-carousel-thumbnail-container">
 		      <div class="vxd-carousel-thumbnail">
-				      <span class="vxd-carousel-thumbnail-title">Men's Button-Downs, Polos & Shorts</span><br/>
-				      <span class="vxd-carousel-thumbnail-subtext">Closet essentials get the summer treatment in colors ranging from saturated to sun faded.</span>
+		      		<img style="" src="SPL_story_2_control.png" alt="">
+				      <span class="vxd-carousel-thumbnail-title">Story 2</span><br/>
+				      <span class="vxd-carousel-thumbnail-subtext"></span>
 		      </div>
 	      </div>
       </div>
@@ -215,8 +223,9 @@ zoom: 1;
       <div class="vxd-carousel-billboard-control-awrap" id="vxdcontrol-3">
 	      <div class="vxd-carousel-thumbnail-container last">
 		      <div class="vxd-carousel-thumbnail">
-				    <span class="vxd-carousel-thumbnail-title">Prom Dresses</span><br/>
-					<span class="vxd-carousel-thumbnail-subtext">We can add a short kicker copy blurb about the trend story here.</span>		      	
+		      	<img style="" src="SPL_story_3_control.png" alt="">
+				    <span class="vxd-carousel-thumbnail-title">Story 3</span><br/>
+					<span class="vxd-carousel-thumbnail-subtext"></span>		      	
 
 		      </div>
 	      </div>
@@ -264,18 +273,13 @@ var $=jQuery;
 <script type="text/javascript">
 /* vxdCarousel, author: Hao Zeng, @haozeng */
 
+
+// this is where the javascript references images in the main billboard area
 var vxdCarouselItemList = [
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_1/WOMEN/billboard_.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011", title: "Barilla PLUS® Spaghetti"},
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_2/MEN/billboard_.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011", title: "Easy Chip and Nut Bread"},
-    {url: "https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/EDITORIAL/SUMMER_1/JUNIORS/billboard_.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011", title: "Hot or Cold Sesame Noodles"},
+    {url: "SPL_story_1.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794975011", title: "Image 1"},
+    {url: "SPL_story_2.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794954011", title: "Image 2"},
+    {url: "SPL_story_3.jpg", link: "amlink:/gp/browse.html/ref=gro_surl_grocery/?node=6794950011", title: "Image 3"},
 ];
-
-
-
-
-
-
-
 
 // count # of carousels, for autohight use
 var vxdCarouselCount = jQuery("#vxd-carousel-billboard-carousel").children().size();
@@ -368,7 +372,7 @@ jQuery(document).ready(function() {
         visible: 1,
         wrap: 'both',
         vertical: true,
-        auto: 3,
+        auto: 500,
         size: vxdCarouselItemList.length,
         animation: 250,
         initCallback: vxdCarousel_initCallback,
