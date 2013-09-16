@@ -1,0 +1,203 @@
+
+/*main page styles*/
+.af-guide-container{
+  background: white;
+  color: #333333 !important;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+  position: relative;
+  cursor: default;
+}
+
+.af-divider {
+  border-top: 1px solid #DCDCDC;
+  height: 29px;
+}
+
+.af-spacing {
+  padding: 15px 0;
+}
+
+.af-centering {
+  margin: 0 auto;
+}
+
+.af-textcenter {
+  text-align: center;
+}
+
+.af-first-section {
+  margin-top: 30px;
+}
+
+/*typograpy styles*/
+
+.af-guide-container h1, h2, h3, h4, h5, h6 {
+  color: #333333 !important;
+  text-rendering: optimizeLegibility;
+}
+
+.af-guide-container h1 {
+  font-size: 1.80em;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+}
+
+.af-guide-container h2 {
+  font-size: 1.40em;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.af-guide-container h3 {
+  font-size: 1.10em;
+}
+
+.af-guide-container h4 {
+  font-size: 1em;
+}
+
+.af-guide-container p {
+  font-size: 16px;
+/*  padding: 0 18px 0 0;*/
+/*  margin: 0;*/
+}
+
+.af-last-p {
+  margin: 0;
+}
+
+.af-guide-container li {
+  font-size: 16px;
+}
+
+.af-guide-subheader {
+  font-weight: normal;
+  font-size: 0.50em;
+  color: #888888;
+}
+
+h3.af-arch-header {
+  font-size: 1.40em;
+  border-bottom: 1px solid black;
+  margin-bottom: 14px;
+}
+
+/*backgrounds*/
+.af-bg-gray {
+  background: #f3f3f3;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+/*topnav buttons*/
+
+.af-topnav {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.af-topnav-btn {
+  display: block;
+  float: left;
+  width: 230px;
+  margin-right: 10px;
+  height: 50px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid;
+  border-color: #d8dbdf lightgrey #c9ccd2;
+  border-bottom-color: lightgrey;
+  cursor: pointer;
+}
+
+.af-topnav-btn:hover {
+  border-color: #bcc1c8 #bababa #adb2bb;
+  background-color: #f7f7f7;
+}
+
+.af-topnav-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  color: #333333 !important;
+  text-decoration: none !important;
+}
+
+.af-topnav-btn-last {
+  margin-right: 0 !important;
+}
+
+
+/*tables*/
+
+table.a-bordered tr:hover {
+  background-color: #c0c0c0 !important;
+}
+
+
+table.a-bordered {
+    width: 940px;
+    margin-bottom: 12px;
+    border-left: 0.1rem solid #e7e7e7;
+    border-right: 0.1rem solid #e7e7e7;
+    border-top: 0.1rem solid #eaeaea;
+    border-spacing: 0; }
+
+    table.a-bordered tr td, table.a-bordered tr th {
+      border-bottom: 0.1rem solid #eaeaea;
+      padding: 2px 8px 2px 0; }
+
+      table.a-bordered tr td:first-child, table.a-bordered tr th:first-child {
+        padding-left: 1.4rem; }
+
+      table.a-bordered tr td:last-child, table.a-bordered tr th:last-child {
+        padding-right: 1.4rem; }
+
+    table.a-bordered tr:first-child th {
+      background: #f0f0f0;
+      background: #f3f3f3;
+      background: -moz-linear-gradient(top, #f8f8f8, #eeeeee);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #eeeeee));
+      background: -webkit-linear-gradient(top, #f8f8f8, #eeeeee);
+      background: -o-linear-gradient(top, #f8f8f8, #eeeeee);
+      background: -ms-linear-gradient(top, #f8f8f8, #eeeeee);
+      background: linear-gradient(top, #f8f8f8, #eeeeee);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#eeeeee',GradientType=0);
+      *zoom: 1;
+      -webkit-box-shadow: 0 0.1rem 0rem rgba(255, 255, 255, 0.5) inset;
+      -moz-box-shadow: 0 0.1rem 0rem rgba(255, 255, 255, 0.5) inset;
+      box-shadow: 0 0.1rem 0rem rgba(255, 255, 255, 0.5) inset;
+      border-color: #e7e7e7;
+      border-bottom: 0.1rem solid #dddddd; }
+
+    table.a-bordered tr:last-child td {
+      border-color: #e7e7e7; }
+
+    table.a-bordered tr:nth-child(even) {
+      background-color: #f6f6f6; }
+
+    table.a-bordered.a-vertical-stripes {
+      border-right: none; }
+
+      table.a-bordered.a-vertical-stripes tr td, table.a-bordered.a-vertical-stripes tr th {
+        border-right: 0.1rem solid #eaeaea; }
+
+        table.a-bordered.a-vertical-stripes tr td:last-child, table.a-bordered.a-vertical-stripes tr th:last-child {
+          border-right: 0.1rem solid #e7e7e7; }
+
+      table.a-bordered.a-vertical-stripes td:nth-child(even), table.a-bordered.a-vertical-stripes th:nth-child(even) {
+        background-color: #f6f6f6; }
+
+      table.a-bordered.a-vertical-stripes tr:nth-child(even) {
+        background-color: transparent; }
