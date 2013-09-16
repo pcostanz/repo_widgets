@@ -1,0 +1,157 @@
+
+  
+<style type="text/css">
+
+
+#af-videowrapper .af-play { 
+  width: 81px; height: 81px; 
+  position: absolute;  
+  top: 50%; 
+  left: 50%; 
+  margin-left: -39px; 
+  margin-top: -39px; 
+}
+
+#af-videowrapper .af-play:hover { 
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+}
+
+#af-slatecontainer {
+
+  position: absolute;
+  z-index: 8;
+  text-align: center;
+  width: 448px;
+  height: 252px;
+  left: 90px;
+  top: 560px;
+  cursor: hand;
+  cursor: pointer;
+
+}
+
+#af-container {
+  position: absolute;
+  width: 448px;
+  height: 252px;
+  z-index: 5;
+  left: 90px;
+  top: 560px;
+  display:inline;
+  border: 0;
+  overflow: hidden;
+  -o-box-shadow: 0 1px 7px 4px #EDEDED;
+  -moz-box-shadow:    0 1px 7px 4px #EDEDED;
+  -webkit-box-shadow: 0 1px 7px 4px #EDEDED;
+  box-shadow: 0 1px 7px 4px #EDEDED;
+}
+
+#af-videowrapper { 
+
+  width:980px; 
+  height:878px; 
+  background:url(https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/billboard_.jpg) no-repeat 0 0; 
+  position:relative; 
+  margin:0px auto; 
+  display:block;
+
+}
+
+.af-shopdresses {
+
+  position: absolute;
+  background-color: transparent;
+  width: 125px;
+  height: 32px;
+  left: 587;
+  top: 209;
+  outline:none;
+
+}
+
+.af-shopall {
+
+  position: absolute;
+  background-color: transparent;
+  width: 154px;
+  height: 32px;
+  left: 586;
+  top: 255;
+  outline: none;
+
+
+}
+
+</style>
+  
+  <div id="af-videowrapper">
+  <div id="af-slatecontainer">
+      <img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/last_slate_.jpg" width="448" height="252" style="display: inline;" /> 
+    <div class="af-play">
+		<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/play_button_red_white_big_.png" width="81" height="81"/> </div>
+  </div>
+  <div id="af-container"></div>
+
+
+  <a class="af-shopdresses" href="amlink:/s/ref=amzfash_cta_shpdrs?node=1045024" alt="Shop Dresses" /></a>
+  <a class="af-shopall" href="amlink:/s/ref=amzfash_cta_shpclo?node=1036592" alt="Shop All Clothing" /></a>
+
+ </div>
+
+
+  <script type="text/javascript">
+    amznJQ.available("jQuery", function () {
+    window.airyTrackingCallback = function(adId, creativeId, impressionId, adServer) {
+        var mediaCentralUrl = location.protocol;
+        var skinFileName = '';
+        if (location.protocol == 'https:') {
+            mediaCentralUrl += '//images-na.ssl-images-amazon.com';
+            skinFileName += 'FashionPlayerSkin-skin-Https._V373740224_.js';
+        } else {
+            mediaCentralUrl += '//ecx.images-amazon.com';
+            skinFileName += 'FashionPlayerSkin-skin._V373702642_.js';
+        }
+        
+        var urls = [ mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/VIDEO/amznfashion._V372256925_.mp4', mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/VIDEO/amznfashion._V372256924_.ogv', mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/VIDEO/amznfashion._V372256927_.webm'];
+        var stage = 'prod';
+        var trackingParams = {
+            impressionId: impressionId,
+            adId: adId
+        };
+        var airyPlayer;
+        var playerInput = {
+            containerId: 'container',
+            urls: urls,
+            width: 448,
+            height: 252,
+            trackingParams: trackingParams,
+            stage: stage,
+            playerReadyCallback: function (player) {
+                airyPlayer = player;
+                player.bind('complete', function () {
+                    jQuery("#slatecontainer").css("visibility", "visible");
+                    jQuery("#slatecontainer").click(function (event) {
+                        airyPlayer.replay();
+                        jQuery("#slatecontainer").css("visibility", "hidden");
+                        jQuery(this).unbind(event);
+                    });
+                });
+            },
+            flashWMode: "opaque",
+            skinJsonpUrl: mediaCentralUrl + '/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/VIDEOS/' + skinFileName ,
+            swfUrl: mediaCentralUrl + '/images/G/01/vap/video/airy/prod/64.0-0/swf/AiryVideo._V373756406_.swf'
+        }
+
+        VideoAds.Airy.embedPlayer(playerInput);
+        jQuery("#slatecontainer").click(function (event) {
+            airyPlayer.play();
+            jQuery("#slatecontainer").css("visibility", "hidden");
+            jQuery(this).unbind(event);
+        });
+    };
+});
+  </script>
