@@ -20,7 +20,6 @@
 			width: 760px;
 			height: 490px;
             overflow: hidden;
-									
 		}
 
 		#asin-video-slate {
@@ -30,22 +29,7 @@
 			width: 760px;
 			height: 490px;
 		}
-
-		
-		#asin-video-overlay {
-			position: relative;
-			top: 0;
-			left: 0;
-            z-index: 5;
-		}
-		
-		#asin-video-overlay .af-coats-cta {
-			display: block;
-			height: 490px;
-			width: 760px;
-			position: absolute;
-		}
-		
+	
 		#asin-video-loader {
 			position: absolute;
 			top: 60%;
@@ -54,7 +38,7 @@
 			margin-top: -48px;
 			height: 96px;
 			width: 96px;
-			z-index: 99;
+			z-index: 5;
 		}
 </style>
 
@@ -63,20 +47,16 @@
 
 	<div id="asin-video-loader">
 	</div>
-
-	<div id="asin-video-overlay">
-		<a class="af-coats-cta" href="#coats" title="Shop Outerwear"></a>
-	</div>
 	
 	<div id="asin-video-container"></div>
 	
-	<div id="asin-video-slate"><img src="wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/2/outerwear_Billboard_intro_slate/wsrp_rewrite"></div>
+	<div id="asin-video-slate"><img src="wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/2/outerwear_Billboard_intro_slate/wsrp_rewrite" usemap="#airymap></div>
 	
 </div>
 
 
 
-<map name="gw-airy-map">
+<map name="airymap">
           
   <area shape="rect" coords="184,5,309,436" href="amlink:/dp/B00CIQEV72?ref=clo_gw_tkovr_model" title="Shop this dress"/>
   <area shape="rect" coords="14,129,643,341" href="amlink:/b/ref=clo_gw_tkovr_dresshp?node=1045024"/>
@@ -105,7 +85,7 @@
     var t = function (e) {
         var t = Airy.embed({
             parentId: "asin-video-container",
-            streamingUrls: ["wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/2/Pan2_long_Billboard3.mp4/wsrp_rewrite"],
+            streamingUrls: ["wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/2/Pan2_long_Billboard3.mp4/wsrp_rewrite",],
             desiredMode: "hybrid",
             flashParams: {
                 wmode: "transparent"
@@ -113,7 +93,7 @@
             cuePoints: [{
                 callback: function (cuePointValue, type, eventContext) {
                     e("#asin-video-slate").css("z-index", -1);
-                    e("#asin-video-slate img").attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/2/outerwear_Billboard_exit_slate/wsrp_rewrite");
+                    swapSlate();
                 },
                 type: "position",
                 values: 0.05,
@@ -126,27 +106,26 @@
                 },
 			
                 play: function (eventObject, eventContext) {
-                    e("#asin-video-loader").fadeOut(100);
-
+					removeLoader();
                 },
                 ended: function (eventObject, eventContext) {
                     e("#asin-video-container").remove();
                 },
 
 				videounsupported: function(eventObject, eventContext) {
-					e("#asin-video-slate img").attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/Pan2_long_Billboard_exit_slate/wsrp_rewrite");
+					swapSlate();
 				},
 				
 				decodeerror: function(eventObject, eventContext) {
-					e("#asin-video-slate img").attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/Pan2_long_Billboard_exit_slate/wsrp_rewrite");
+					swapSlate();
 				},
 				
 				undefinederror: function(eventObject, eventContext) {
-					e("#asin-video-slate img").attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/Pan2_long_Billboard_exit_slate/wsrp_rewrite");
+					swapSlate();
 				},
 				
 				networkerror: function(eventObject, eventContext) {
-					e("#asin-video-slate img").attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/Pan2_long_Billboard_exit_slate/wsrp_rewrite");
+					swapSlate();
 				},
 				
             },
@@ -158,6 +137,20 @@
             swfUrl: "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/337.0-0/flash/AiryBasicRenderer.swf/wsrp_rewrite?" + new Date,
         });
         t.play();
+		
+		var swapSlate = function() {
+			var slate = e("#asin-video-slate img");
+			
+			slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/2/outerwear_Billboard_exit_slate/wsrp_rewrite");
+		}
+		
+		var removeLoader = function() {
+			var loader = e("#asin-video-loader");
+					
+			loader.fadeOut(100);
+			loader.remove();		
+		}
+		
     };
 	
     var n = s();
