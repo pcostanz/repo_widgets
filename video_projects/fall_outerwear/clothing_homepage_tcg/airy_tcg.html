@@ -114,7 +114,6 @@
                 callback: function (cuePointValue, type, eventContext) {
                     e("#asin-video-slate").css("z-index", -1);
                     e("#asin-video-slate img").attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/2/outerwear_Billboard_exit_slate/wsrp_rewrite");
-					console.log("cuepoint fired");
                 },
                 type: "position",
                 values: 0.05,
@@ -128,7 +127,6 @@
 			
                 play: function (eventObject, eventContext) {
                     e("#asin-video-loader").fadeOut(100);
-					console.log("play fired");
 
                 },
                 ended: function (eventObject, eventContext) {
