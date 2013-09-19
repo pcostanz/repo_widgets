@@ -1,6 +1,7 @@
 <!--[if lte IE 7]>
   <style>
   #af-slate {display:none !important;}
+  #af-slate-noscript {display:none !important;}
   </style>
 <![endif]-->
 
@@ -13,6 +14,7 @@
 <style type="text/css">
 
 		#asin-video-wrapper {
+			padding-top: 10px;
 			width: 760px;
 			height: 490px;
 			position: relative;
@@ -40,6 +42,27 @@
 			width: 760px;
 			height: 490px;
 		}
+		
+		#clickablevideo {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 760px;
+			height: 490px;
+			z-index: 6;
+			background-image: url("about:blank");
+		}
+		
+		#asin-video-clickarea {
+			width: 760px;
+			height: 490px;
+			z-index: 6;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			cursor: pointer;
+			
+		}
 
 		#asin-video-loader {
 			position: absolute;
@@ -59,29 +82,31 @@
 	</div>
 	<div id="asin-video-container"></div>
 	
+
+	<div id="asin-video-clickarea"><a id="clickablevideo" href="amlink:/b/ref=clo_h_main_video?node=1044646" title="Women's Fall Coats"></a></div>
+	
 	<div id="asin-video-slate">
 	
-	<img id="af-slate" src="wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/outerwear_Billboard_intro_slate/wsrp_rewrite" usemap="#airymap"/>
+	<img id="af-slate" src="wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_intro/wsrp_rewrite" usemap="#airymap"/>
 	
 	<!--[if lte IE 7]>
-    <img src='wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/outerwear_Billboard_exit_slate/wsrp_rewrite' width="760" height="490" usemap="#airymap" style="display: inline;" border="0"/>
+    <img src='wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite' width="760" height="490" usemap="#airymap" style="display: inline;" border="0"/>
     <![endif]-->
+	
 	<noscript>
-	<img id="af-slate-noscript" src="wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/outerwear_Billboard_exit_slate/wsrp_rewrite" usemap="#airymap"/>
+	<img id="af-slate-noscript" src="wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite" usemap="#airymap"/>
 	</noscript>
 	
 	</div>
+	
+
 
 </div>
 
 
 
 <map name="airymap">
-  <area shape="rect" coords="184,5,309,436" href="amlink:/dp/B00CIQEV72?ref=clo_gw_tkovr_model" title="Shop this dress"/>
-  <area shape="rect" coords="14,129,643,341" href="amlink:/b/ref=clo_gw_tkovr_dresshp?node=1045024"/>
-  <area shape="rect" coords="25,11,182,37" href="amlink:/b/ref=clo_gw_tkovr_amznfashion?node=5754516011" />
-  <area shape="rect" coords="364,383,465,414" href="amlink:/b/ref=clo_gw_tkovr_dresshp?node=1045024" />
-  <area shape="rect" coords="467,383,581,415" href="amlink:/b/ref=clo_gw_tkovr_allclo?node=1036592" />
+
 </map>
 
 		
@@ -103,21 +128,27 @@
     var t = function (e) {
         var t = Airy.embed({
             parentId: "asin-video-container",
-            streamingUrls: ["wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/Outerwear_billboard_vid.mp4/wsrp_rewrite",
-			"wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/Outerwear_billboard_vid.webm/wsrp_rewrite"],
-            desiredMode: "html",
+            streamingUrls: ["wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_vid3_base31.mp4/wsrp_rewrite"],
+            desiredMode: "hybrid",
             flashParams: {
                 wmode: "transparent"
             },
             cuePoints: [{
                 callback: function (cuePointValue, type, eventContext) {
                     e("#asin-video-slate").css("z-index", -1);
-                    swapSlate();
 					removeLoader();
                 },
                 type: "position",
-                values: 0.05,
-            }],
+                values: 0.25,
+            },
+			
+			{
+                callback: function (cuePointValue, type, eventContext) {
+                    swapSlate();
+                },
+                type: "position",
+                values: 2,
+			}],
 			
             bindings: {
 			
@@ -129,22 +160,26 @@
 					
                 },
                 ended: function (eventObject, eventContext) {
-                    e("#asin-video-container").remove();
+                    e("#asin-video-container").fadeOut(2000, function() { e(this).remove(); });
                 },
 
 				videounsupported: function(eventObject, eventContext) {
+					removeLoader();
 					swapSlate();
 				},
 				
 				decodeerror: function(eventObject, eventContext) {
+					removeLoader();
 					swapSlate();
 				},
 				
 				undefinederror: function(eventObject, eventContext) {
+					removeLoader();
 					swapSlate();
 				},
 				
 				networkerror: function(eventObject, eventContext) {
+					removeLoader();
 					swapSlate();
 				},
 				
@@ -160,15 +195,12 @@
 		
 		var swapSlate = function() {
 			var slate = e("#af-slate");
-			
-			slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/outerwear_Billboard_exit_slate/wsrp_rewrite");
+			slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
 		}
 		
 		var removeLoader = function() {
 			var loader = e("#asin-video-loader");
-					
-			loader.fadeOut(100);
-			loader.remove();		
+			loader.fadeOut(100, function() { e(this).remove(); });	
 		}
 		 
     };
@@ -184,7 +216,7 @@
 						var loadSpinner = document.createElement("img");
 						loadSpinner.src = "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST/loader2/wsrp_rewrite";
 						loadContainer.appendChild(loadSpinner);
-					}
+					} 
 					else return;
 			}, 650)		
             e.hasVideoOnGatewayLoaded = true;
@@ -195,7 +227,8 @@
                 });
                 e.P.when("A").execute(function (n) {
                     e.P.when("Airy").execute(function (e) {
-                        t(n.$)
+						t(n.$)
+						
                     })
                 })
             } else {
@@ -207,20 +240,18 @@
                 })
             }
         }
-		else return; // not sure if this is the best way to deal with not running the below code
     }
-	
 	else {
 	 
             if (typeof e.P === "object") {
                 e.P.when("A").execute(function (n) {
 					var slate = n.$("#af-slate");
-					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/outerwear_Billboard_exit_slate/wsrp_rewrite");
+					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
                 })
             } else {
                 e.amznJQ.onReady("jQuery", function () {
 					var slate = jQuery("#af-slate");
-					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/HP/outerwear_Billboard_exit_slate/wsrp_rewrite");
+					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
                 })
             }
 	 
