@@ -168,22 +168,22 @@
 
 				videounsupported: function(eventObject, eventContext) {
 					removeLoader();
-					swapSlate();
+					swapSlateFail();
 				},
 				
 				decodeerror: function(eventObject, eventContext) {
 					removeLoader();
-					swapSlate();
+					swapSlateFail();
 				},
 				
 				undefinederror: function(eventObject, eventContext) {
 					removeLoader();
-					swapSlate();
+					swapSlateFail();
 				},
 				
 				networkerror: function(eventObject, eventContext) {
 					removeLoader();
-					swapSlate();
+					swapSlateFail();
 				},
 				
             },
@@ -199,6 +199,12 @@
 		var swapSlate = function() {
 			var slate = e("#af-slate");
 			slate.attr("src", finalSlate);
+		}
+		
+		var swapSlateFail = function() {
+			var img = e('<img />').css({'position': 'absolute', 'left': 0, 'top': 0, 'z-index': -1}).attr({ 'id': "failslate", 'src': finalSlate}).appendTo(e('#asin-video-slate'));
+			e("#af-slate").fadeOut(550);
+
 		}
 		
 		var removeLoader = function() {
@@ -221,7 +227,7 @@
 						loadContainer.appendChild(loadSpinner);
 					} 
 					else return;
-			}, 650)		
+			}, 1000)		
             e.hasVideoOnGatewayLoaded = true;
             var i = "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/337.0-0/js/airy.js/wsrp_rewrite";
             if (typeof e.P === "object") {
@@ -248,13 +254,13 @@
 	 
             if (typeof e.P === "object") {
                 e.P.when("A").execute(function (n) {
-					var slate = n.$("#af-slate");
-					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
+					var img = n.$('<img />').css({'position': 'absolute', 'left': 0, 'top': 0, 'z-index': -1}).attr({ 'id': "failslate", 'src': finalSlate}).appendTo(n.$('#asin-video-slate'));
+					n.$("#af-slate").fadeOut(550);
                 })
             } else {
                 e.amznJQ.onReady("jQuery", function () {
-					var slate = jQuery("#af-slate");
-					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
+					var img = jQuery('<img />').css({'position': 'absolute', 'left': 0, 'top': 0, 'z-index': -1}).attr({ 'id': "failslate", 'src': finalSlate}).appendTo(jQuery('#asin-video-slate'));
+					jQuery("#af-slate").fadeOut(550);
                 })
             }
 	 
