@@ -124,11 +124,14 @@
         }
         return e
     }
+	
+	var videoLink = "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_vid4_base31.mp4/wsrp_rewrite";
+	var finalSlate = "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite";
 
     var t = function (e) {
         var t = Airy.embed({
             parentId: "asin-video-container",
-            streamingUrls: ["wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_vid3_base31.mp4/wsrp_rewrite"],
+            streamingUrls: [ videoLink ],
             desiredMode: "hybrid",
             flashParams: {
                 wmode: "transparent"
@@ -195,7 +198,7 @@
 		
 		var swapSlate = function() {
 			var slate = e("#af-slate");
-			slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
+			slate.attr("src", finalSlate);
 		}
 		
 		var removeLoader = function() {
