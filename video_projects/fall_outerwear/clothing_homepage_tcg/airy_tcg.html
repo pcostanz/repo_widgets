@@ -197,8 +197,7 @@
         t.play();
 		
 		var swapSlate = function() {
-			var slate = e("#af-slate");
-			slate.attr("src", finalSlate);
+			var img = e('<img />').attr({ 'id': failslate, 'src': finalSlate}).appendTo(e('#asin-video-slate'));
 		}
 		
 		var removeLoader = function() {
@@ -248,13 +247,13 @@
 	 
             if (typeof e.P === "object") {
                 e.P.when("A").execute(function (n) {
-					var slate = n.$("#af-slate");
-					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
+				
+					var img = n.$('<img />').attr({ 'id': failslate, 'src': finalSlate}).appendTo(n.$('#asin-video-slate'));
+
                 })
             } else {
                 e.amznJQ.onReady("jQuery", function () {
-					var slate = jQuery("#af-slate");
-					slate.attr("src", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=/AMAZON_FASHION/2013/GATEWAY/FALL1/VIDEO/TEST2/Outerwear_billboard_exit/wsrp_rewrite");
+					var img = jQuery('<img />').attr({ 'id': failslate, 'src': finalSlate}).appendTo(n.$('#asin-video-slate'));
                 })
             }
 	 
