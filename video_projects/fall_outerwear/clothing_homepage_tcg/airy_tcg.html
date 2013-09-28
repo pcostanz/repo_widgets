@@ -126,7 +126,7 @@
 		
 		var swapSlateFail = function() {
 			var img = jQ('<img />').css({'position': 'absolute', 'left': 0, 'top': 0, 'z-index': -1}).attr({ 'id': "failslate", 'src': finalSlate}).appendTo(jQ('#asin-video-slate'));
-			setTimeout(function() {jQ("#af-slate").fadeOut(550);}, 2000);
+			setTimeout(function() {jQ("#af-slate").fadeOut(550);}, 1000);
 		}
 		
 		var removeLoader = function() {
@@ -202,7 +202,6 @@
 			
 			foresterMetadataParams : {
 				 client : "Fashion", 
-				 requestId : "Airy_TCG"
 			 },
 			
         });
@@ -262,7 +261,7 @@
 	
 			var unSupDeviceFail = function (jQ) {
 				var img = jQ('<img />').css({'position': 'absolute', 'left': 0, 'top': 0, 'z-index': -1}).attr({ 'id': "failslate", 'src': finalSlate}).appendTo(jQ('#asin-video-slate'));
-				setTimeout(function() {jQ("#af-slate").fadeOut(550);}, 2000);
+				setTimeout(function() {jQ("#af-slate").fadeOut(550);}, 1000);
 			}
 	 
             if (typeof e.P === "object") {

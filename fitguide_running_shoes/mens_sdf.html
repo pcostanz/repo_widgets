@@ -1,0 +1,513 @@
+<style>
+
+.af-left {
+	float: left;
+}
+
+.af-right {
+	float: right;
+}
+
+.af-sdf-wrapper {
+	width: 780px;
+	margin: 0 auto 100px;
+}
+
+.af-sdf-wrapper ul {
+	list-style-type: none;
+	-webkit-padding-start: 0;
+	padding-left: 0;
+}
+
+.af-sdf-wrapper a {
+	outline: none;
+}
+
+.af-sdf-wrapper img {
+	border: 0;
+}
+
+.af-sdf-landing {
+	height: 167px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men4_01._V355973933_.jpg') no-repeat;
+}
+
+.af-sdf-landing-header {
+	height: 42px;
+}
+
+/*shopable links*/
+
+.af-sdf-shoppable-links {
+	margin: 232px 0 0 285px;
+}
+
+.af-sdf-shoppable-links ul {
+	list-style-type: none;
+	margin: 0;
+	-webkit-padding-start: 0px;
+}
+
+.af-sdf-shoppable-links ul li {
+	height: 22px;
+	margin: 0 0 5px 0;
+}
+
+
+.af-sdf-content-section {
+	position: relative;
+}
+
+
+.af-sdf-content-section-leftcol {
+	float: left;
+	margin: 67px 0 0 30px;
+}
+
+.af-sdf-content-section-centercol {
+	float: left;
+}
+
+.af-sdf-content-section-rightcol {
+	float: left;
+}
+
+.af-sdf-accordion {
+	width: 240px;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-text {
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men_sprite._V355973934_.jpg') no-repeat;
+	display: none;
+	width: 240px;
+	margin-bottom: 4px;
+	margin-top: -6px;
+	height: 79px;
+}
+
+.af-sdf-accordion div.af-sdf-accordion-active div.af-sdf-accordion-text {
+	display: block;
+}
+
+/*social header links*/
+.af-sdf-landing-header-social {
+	list-style: none;
+	margin: 10px 30px 0 0;
+}
+
+.af-sdf-landing-header-social li {
+	display: -moz-inline-stack; /*firefox 2 inline-block hack - needs to be before inline-block display*/
+	display: inline-block;
+	zoom: 1; /*ie6/7 inline-block hack*/
+	*display: inline; /*ie6/7 inline-block hack*/
+	cursor: pointer;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men_sprite._V355973934_.jpg') no-repeat;
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
+}
+
+.af-sdf-landing-header-social li.af-sprite-social-facebook {background-position: -17px -1376px;}
+.af-sdf-landing-header-social li.af-sprite-social-facebook:hover {opacity: 0.8;}
+.af-sdf-landing-header-social li.af-sprite-social-twitter {background-position: -48px -1376px;}
+.af-sdf-landing-header-social li.af-sprite-social-twitter:hover {opacity: 0.8;}
+.af-sdf-landing-header-social li.af-sprite-social-pinterest {background-position: -81px -1376px;}
+.af-sdf-landing-header-social li.af-sprite-social-pinterest:hover {opacity: 0.8;}
+.af-sdf-landing-header-social li.af-sprite-social-instagram {background-position: -114px -1376px;}
+.af-sdf-landing-header-social li.af-sprite-social-instagram:hover {opacity: 0.8;}
+
+.af-sdf-accordion-header {
+	cursor: pointer;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men_sprite._V355973934_.jpg') no-repeat;
+	margin: 0;
+	margin-bottom: 4px;
+	height: 31px;
+	width: 240px;
+}
+
+div.af-sprite-header-road-1 {background-position: -17px -18px;}
+div.af-sprite-header-road-2 {background-position: -17px -55px;}
+div.af-sprite-header-road-3 {background-position: -17px -91px;}
+div.af-sprite-header-marathon-1 {background-position: -17px -444px;}
+div.af-sprite-header-marathon-2 {background-position: -17px -480px;}
+div.af-sprite-header-marathon-3 {background-position: -17px -516px;}
+div.af-sprite-header-minimal-1 {background-position: -17px -870px;}
+div.af-sprite-header-minimal-2 {background-position: -17px -906px;}
+div.af-sprite-header-minimal-3 {background-position: -17px -941px;}
+div.af-sprite-header-trail-1 {background-position: -258px -18px;}
+div.af-sprite-header-trail-2 {background-position: -258px -55px;}
+div.af-sprite-header-trail-3 {background-position: -258px -91px;}
+div.af-sprite-header-crosstrain-1 {background-position: -258px -445px;}
+div.af-sprite-header-crosstrain-2 {background-position: -258px -480px;}
+div.af-sprite-header-crosstrain-3 {background-position: -258px -515px;}
+
+/*landing links*/
+
+.af-sdf-landing-links {
+	width: 485px;
+	height: 16px;
+	margin: 0 auto;
+	padding-top: 85px;
+}
+
+.af-navlinks {
+	height: 16px;
+}
+
+.af-sdf-landing-links ul li {
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men_sprite._V355973934_.jpg') no-repeat;
+	height: 16px;
+	margin-left: 0;
+	margin-right: 22px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+
+}
+
+.af-sdf-landing-links li.af-sprite-landing-links-road {width: 41px; background-position: -18px -1320px;}
+.af-sdf-landing-links li.af-sprite-landing-links-road:hover {background-position: -18px -1347px;}
+.af-sdf-landing-links li.af-sprite-landing-links-marathon {width: 79px; background-position: -82px -1320px;}
+.af-sdf-landing-links li.af-sprite-landing-links-marathon:hover {background-position: -82px -1347px;}
+.af-sdf-landing-links li.af-sprite-landing-links-minimal {width: 62px; background-position: -188px -1320px;}
+.af-sdf-landing-links li.af-sprite-landing-links-minimal:hover {background-position: -188px -1347px;}
+.af-sdf-landing-links li.af-sprite-landing-links-trail {width: 43px; background-position: -274px -1320px;}
+.af-sdf-landing-links li.af-sprite-landing-links-trail:hover {background-position: -274px -1347px;}
+.af-sdf-landing-links li.af-sprite-landing-links-xtrain {width: 123px; background-position: -343px -1320px;}
+.af-sdf-landing-links li.af-sprite-landing-links-xtrain:hover {background-position: -343px -1347px;}
+
+.af-sdf-wrapper li a, .af-sdf-wrapper div a {display: block; height: 100%;}
+
+
+.af-sdf-accordion-plustoggle {
+	height: 31px; 
+	width: 31px; 
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Women/plus_button._V355972238_.png') no-repeat; 
+	background-position: 5px;
+}
+
+.af-sprite-plus {
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Women/minus_button._V355972239_.png') no-repeat;
+	background-position: 5px;
+}
+
+.af-sdf-backtotop {
+	height: 30px;
+	width: 114px;
+	margin: 0 auto;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men_sprite._V355973934_.jpg') no-repeat;
+	background-position: -13px -1436px;
+}
+
+.af-sdf-backtotop:hover {
+	background-position: -13px -1393px;
+}
+
+
+#af-sdf-content-section1 {
+	height: 370px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men4_02._V355973969_.jpg') no-repeat;
+}
+
+#af-sdf-content-section2 {
+	height: 367px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men4_03._V355973932_.jpg') no-repeat;
+}
+
+#af-sdf-content-section3 {
+	height: 373px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men4_04._V355973969_.jpg') no-repeat;
+}
+
+#af-sdf-content-section4 {
+	height: 371px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men4_05._V355973970_.jpg') no-repeat;
+}
+
+#af-sdf-content-section5 {
+	height: 377px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men4_06._V355973970_.jpg') no-repeat;
+}
+
+
+.af-sdf-content-section-leftaccordion {
+	position: absolute;
+	left: 30px;
+	top: 120px;
+}
+
+.af-sdf-content-section-rightaccordion {
+	position: absolute;
+	left: 480px;
+	top: 120px;
+}
+
+div.af-sdf-accordion div.af-text-road-1 {background-position: -17px -149px;}
+div.af-sdf-accordion div.af-text-road-2 {background-position: -17px -255px;}
+div.af-sdf-accordion div.af-text-road-3 {background-position: -17px -361px;}
+div.af-sdf-accordion div.af-text-marathon-1 {background-position: -17px -575px;}
+div.af-sdf-accordion div.af-text-marathon-2 {background-position: -17px -681px;}
+div.af-sdf-accordion div.af-text-marathon-3 {background-position: -17px -787px;}
+div.af-sdf-accordion div.af-text-minimal-1 {background-position: -17px -1001px;}
+div.af-sdf-accordion div.af-text-minimal-2 {background-position: -17px -1107px;}
+div.af-sdf-accordion div.af-text-minimal-3 {background-position: -17px -1213px;}
+div.af-sdf-accordion div.af-text-trail-1 {background-position: -258px -149px;}
+div.af-sdf-accordion div.af-text-trail-2 {background-position: -17px -255px;}
+div.af-sdf-accordion div.af-text-trail-3 {background-position: -17px -361px;}
+div.af-sdf-accordion div.af-text-crosstrain-1 {background-position: -17px -575px;}
+div.af-sdf-accordion div.af-text-crosstrain-2 {background-position: -17px -681px;}
+div.af-sdf-accordion div.af-text-crosstrain-3 {background-position: -17px -787px;}
+
+.af-sdf-cta-container {
+	position: absolute;
+	top: 0;
+	height: 370px;
+	width: 420px;	
+}
+
+.container-right {
+	right: 58px;
+}
+
+.container-left {
+	left: 58px;
+}
+
+.af-sdf-cta-container a{
+	position: relative;
+	display: block;
+	height: 370px;
+	width: 420px;
+	*background-image: url("about:blank");
+}
+
+.af-sdf-cta-graphic {
+	position: absolute;
+	height: 33px;
+	bottom: 45px;
+	background: url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/Patrick/Athletic/Men/athletic_men_sprite._V355973934_.jpg') no-repeat;
+}
+
+.graphic-right {
+	right: 70px;
+}
+
+.graphic-left {
+	left: 70px;
+}
+
+.af-sdf-road-cta {background-position: -277px -879px; width: 160px;}
+.af-sdf-road-cta:hover {background-position: -277px -1092px;}
+.af-sdf-marathon-cta {background-position: -277px -920px; width: 189px;}
+.af-sdf-marathon-cta:hover {background-position: -277px -1133px;}
+.af-sdf-minimal-cta {background-position: -277px -961px; width: 182px;}
+.af-sdf-minimal-cta:hover {background-position: -277px -1174px;}
+.af-sdf-trail-cta {background-position: -277px -1002px; width: 151px;}
+.af-sdf-trail-cta:hover {background-position: -277px -1215px;}
+.af-sdf-crosstrain-cta {background-position: -277px -1043px; width: 216px;}
+.af-sdf-crosstrain-cta:hover {background-position: -277px -1256px;}
+</style>
+
+<!-- overall content wrap -->
+<div class="af-sdf-wrapper">
+
+<!-- top landing page wrap -->
+<div class="af-sdf-landing">
+	<div class="af-sdf-landing-header">
+		<div class="af-right">
+			<ul class="af-sdf-landing-header-social">
+				<li class="af-sprite-social-facebook" title="Facebook"><a href="amlink:/gp/redirect.html/?location=http://www.facebook.com/AmazonFashion/&token=6BD0FB927CC51E76FF446584B1040F70EA7E88E1" target="_blank"></a></li>
+				<li class="af-sprite-social-twitter" title="Twitter"><a href="amlink:/gp/redirect.html/?location=http://twitter.com/amazonfashion/&token=7A1A4AE8F6CE0BD277D8295E58702D283F329C0F" target="_blank"></a></li>
+				<li class="af-sprite-social-pinterest" title="Pinterest"><a href="amlink:/gp/redirect.html/?location=http://www.pinterest.com/AmazonFashion/&token=7BA4C7DA7E25FD68725161D7D739AAE1A1A82774" target="_blank"></a></li>
+				<li class="af-sprite-social-instagram" title="Instagram"><a href="amlink:/gp/redirect.html/?location=http://www.instagram.com/amazonfashion/&token=B90D54061FF47F46008CE9C37C30A3311C2FD932" target="_blank"></a></li>
+			</ul>
+		</div>
+	</div>
+
+			<div class="af-sdf-landing-links">
+				<ul class="af-navlinks">
+					<li class="af-sprite-landing-links-road"><a href="#af-sdf-content-section1"></a></li>
+					<li class="af-sprite-landing-links-marathon"><a href="#af-sdf-content-section2"></a></li>
+					<li class="af-sprite-landing-links-minimal"><a href="#af-sdf-content-section3"></a></li>
+					<li class="af-sprite-landing-links-trail"><a href="#af-sdf-content-section4"></a></li>
+					<li class="af-sprite-landing-links-xtrain"><a href="#af-sdf-content-section5"></a></li>
+				</ul>
+			</div>
+
+</div>
+
+<!-- main content wrap -->
+<div class="af-sdf-content">
+
+<div class="af-sdf-content-section" id="af-sdf-content-section1">
+	<div class="af-sdf-content-section-leftaccordion">
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-road-1"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text af-text-road-1"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-road-2"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-road-2"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-road-3"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-road-3"></div>
+				</div>
+		</div>
+	</div>
+	<div class="af-sdf-cta-container container-right"><a href="#REPLACEME"></a></div>
+	<div class="af-sdf-cta-graphic af-sdf-road-cta graphic-right"><a href="#REPLACEME"></a></div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section2">
+	<div class="af-sdf-content-section-rightaccordion">
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-marathon-1"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text af-text-marathon-1"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-marathon-2"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-marathon-2"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-marathon-3"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-marathon-3"></div>
+				</div>
+		</div>
+	</div>
+	<div class="af-sdf-cta-container container-left"><a href="#REPLACEME"></a></div>
+	<div class="af-sdf-cta-graphic af-sdf-marathon-cta graphic-left"><a href="#REPLACEME"></a></div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section3">
+	<div class="af-sdf-content-section-leftaccordion">
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-minimal-1"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text af-text-minimal-1"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-minimal-2"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-minimal-2"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-minimal-3"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-minimal-3" style="height: 94px"></div>
+				</div>
+		</div>
+	</div>
+	<div class="af-sdf-cta-container container-right"><a href="#REPLACEME"></a></div>
+	<div class="af-sdf-cta-graphic af-sdf-minimal-cta graphic-right"><a href="#REPLACEME"></a></div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section4">
+	<div class="af-sdf-content-section-rightaccordion">
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-trail-1"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text af-text-trail-1"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-trail-2"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-trail-2"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-trail-3"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-trail-3"></div>
+				</div>
+		</div>
+	</div>
+	<div class="af-sdf-cta-container container-left"><a href="#REPLACEME"></a></div>
+	<div class="af-sdf-cta-graphic af-sdf-trail-cta graphic-left"><a href="#REPLACEME"></a></div>
+</div>
+
+<div class="af-sdf-content-section" id="af-sdf-content-section5">
+	<div class="af-sdf-content-section-leftaccordion">
+		<div class="af-sdf-accordion">
+				<div class="af-sdf-accordion-active">
+					<div class="af-sdf-accordion-header af-sprite-header-crosstrain-1"><div class="af-sdf-accordion-plustoggle af-sprite-plus"></div></div>
+					<div class="af-sdf-accordion-text af-text-crosstrain-1"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-crosstrain-2"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-crosstrain-2"></div>
+				</div>
+
+				<div>
+					<div class="af-sdf-accordion-header af-sprite-header-crosstrain-3"><div class="af-sdf-accordion-plustoggle"></div></div>
+					<div class="af-sdf-accordion-text af-text-crosstrain-3"></div>
+				</div>
+		</div>
+	</div>
+	<div class="af-sdf-cta-container container-right"><a href="#REPLACEME"></a></div>
+	<div class="af-sdf-cta-graphic af-sdf-crosstrain-cta graphic-right"><a href="#REPLACEME"></a></div>
+</div>
+
+<div class="af-sdf-backtotop">
+<a href="#navbar"></a>
+</div>
+
+
+</div>
+<!-- end main content wrap -->
+</div>
+<!-- end overall content wrap -->
+
+<script type="text/javascript">
+
+amznJQ.available('jQuery', function() {
+
+
+// accordion functionality
+jQuery(".af-sdf-accordion-header").click(function(){
+	console.log("registered header click");
+	jQuery(this).parent().siblings().children('.af-sdf-accordion-text').slideUp();
+		
+		if(!jQuery(this).next().is(":visible"))
+
+		{
+			jQuery(this).next().slideDown();
+			jQuery(this).children('.af-sdf-accordion-plustoggle').addClass('af-sprite-plus');
+			jQuery(this).parent().siblings().children('.af-sdf-accordion-header').children('.af-sdf-accordion-plustoggle').removeClass('af-sprite-plus');
+		}
+})
+
+jQuery('.af-navlinks li').click(function(e){
+	e.preventDefault();
+	var navIndex = jQuery(this).index()+1;
+	var navScrollDestination = "#af-sdf-content-section" + navIndex;
+	scrollToID(navScrollDestination, 500);
+});
+
+jQuery('#leftNav .left_nav').find('ul:first').children().click(function(e){
+	e.preventDefault();
+	var navIndex = jQuery(this).index()+1;
+	var navScrollDestination = "#af-sdf-content-section" + navIndex;
+	scrollToID(navScrollDestination, 500);
+});
+
+function scrollToID(id, speed){
+	var targetOffset = jQuery(id).offset().top-20;
+	jQuery('html,body').animate({scrollTop:targetOffset}, speed);
+}
+
+jQuery('.af-sdf-backtotop').click(function(e){
+	e.preventDefault();
+	jQuery('html,body').animate({scrollTop: 0}, 500);
+});
+
+		
+});
+
+</script>
