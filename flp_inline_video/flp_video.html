@@ -172,14 +172,14 @@
 				
             },
 			
-			// disabledViewIds : [ 'screenSizeToggle'],
+			disabledViewIds : ['replayHint'], // don't need the replay hint since we're doign this with the slate
 			
             flashVars: {
                 bufferTimeSeconds: 2,
                 rebufferTimeSeconds: 2
             },
 			skinUrl: "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/401.0-0/skins/beacon.js/wsrp_rewrite",
-            swfUrl: "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/401.0-0/flash/AiryBasicRenderer.swf/wsrp_rewrite?" + new Date,
+            swfUrl: "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/401.0-0/flash/AiryBasicRenderer.swf/wsrp_rewrite?",
         });
 		
 		e('#af-slatecontainer').click(function() {
