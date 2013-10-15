@@ -1,0 +1,217 @@
+<link rel="stylesheet" href="http://z-ecx.images-amazon.com/images/G/01/vap/video/airy2/prod/401.0-0/css/beacon.css">
+  
+<style type="text/css">
+
+
+#af-videowrapper .af-play { 
+  width: 81px; height: 81px; 
+  position: absolute;  
+  top: 50%; 
+  left: 50%; 
+  margin-left: -39px; 
+  margin-top: -39px; 
+}
+
+#af-videowrapper .af-play:hover { 
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+}
+
+#af-slatecontainer {
+
+  position: absolute;
+  z-index: 8;
+  text-align: center;
+  width: 448px;
+  height: 252px;
+  left: 90px;
+  top: 560px;
+  cursor: hand;
+  cursor: pointer;
+
+}
+
+#af-container {
+  position: absolute;
+  width: 448px;
+  height: 252px;
+  z-index: 5;
+  left: 90px;
+  top: 560px;
+  display:inline;
+  border: 0;
+  overflow: hidden;
+  -o-box-shadow: 3px 2px 7px 3px #EDEDED;
+  -moz-box-shadow:    3px 2px 7px 3px #EDEDED;
+  -webkit-box-shadow: 3px 2px 7px 3px #EDEDED;
+  box-shadow: 3px 2px 7px 3px #EDEDED;
+}
+
+#af-videowrapper { 
+
+  width:980px; 
+  height:878px; 
+  background:url(https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/billboard_.jpg) no-repeat 0 0; 
+  position:relative; 
+  margin:0px auto; 
+  display:block;
+
+}
+
+.af-shopcoats {
+
+	position: absolute;
+	background-color: transparent;
+	width: 171px;
+	height: 32px;
+	left: 611px;
+	top: 703px;
+	outline: none;
+}
+
+.af-seemore {
+
+	position: absolute;
+	background-color: transparent;
+	width: 101px;
+	height: 32px;
+	left: 797px;
+	top: 703px;
+	outline: none;
+
+
+}
+
+.af-models {
+
+	position: absolute;
+	background-color: transparent;
+	width: 960px;
+	height: 545px;
+	left: 0;
+	top: 0;
+	outline: none;
+
+}
+
+</style>
+  
+  <div id="af-videowrapper">
+  <div id="af-slatecontainer">
+      <img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/last_slate_a.jpg" width="448" height="252" style="display: inline;"/> 
+    <div class="af-play">
+		<img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/play_button_red_white_big_.png" width="81" height="81"/> 
+	</div>
+  </div>
+  <div id="af-container"></div>
+
+
+  <a class="af-shopcoats" href="amlink:/gp/showcase/383375962?ref=amzfash_cta_shpcoats" alt="Shop Fall Coats" > </a>
+  <a class="af-seemore" href="amlink:/s/ref=amzfash_cta_seemore?node=1044646" alt="See More" ></a>
+  <a class="af-models" href="amlink:/s/ref=amzfash_cta_models?node=1044646" alt="Shop Fall Coats"> </a>
+
+ </div>
+
+
+  <script type="text/javascript">
+
+(function (e) {
+    function s() {
+        var e = -1;
+        if (navigator.appName == "Microsoft Internet Explorer") {
+            var t = navigator.userAgent;
+            var n = new RegExp("MSIE([0-9]{1,}[.0-9]{0,})");
+            if (n.exec(t) != null) {
+                e = parseFloat(RegExp.$1)
+            }
+        }
+        return e
+    }
+
+    var t = function (e) {
+        var t = Airy.embed({
+            parentId: "af-container",
+            streamingUrls: ["wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/VIDEO/AMAZON_FASHION_30sec_outerwear_base31.mp4/wsrp_rewrite", "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=AMAZON_FASHION/2013/CLOTHING/FLP/09_17_13/VIDEO/AMAZON_FASHION_30sec_outerwear.webm/wsrp_rewrite"],
+            desiredMode: "html",
+            flashParams: {
+                wmode: "transparent"
+            },
+
+            bindings: {
+			
+                initstart: function (eventObject, eventContext) {
+					e("#asin-video-container > div").css("background-color", "transparent");
+                },
+			
+                play: function (eventObject, eventContext) {
+                    e("#af-slatecontainer").fadeOut(100);
+
+                },
+                ended: function (eventObject, eventContext) {
+                    e("#af-slatecontainer").fadeIn(100);
+                },
+
+				videounsupported: function(eventObject, eventContext) {
+
+				},
+				
+				decodeerror: function(eventObject, eventContext) {
+
+				},
+				
+				undefinederror: function(eventObject, eventContext) {
+
+				},
+				
+				networkerror: function(eventObject, eventContext) {
+
+				},
+				
+            },
+			
+			// disabledViewIds : [ 'screenSizeToggle'],
+			
+            flashVars: {
+                bufferTimeSeconds: 2,
+                rebufferTimeSeconds: 2
+            },
+			skinUrl: "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/401.0-0/skins/beacon.js/wsrp_rewrite",
+            swfUrl: "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/401.0-0/flash/AiryBasicRenderer.swf/wsrp_rewrite?" + new Date,
+        });
+		
+		e('#af-slatecontainer').click(function() {
+			t.play();
+		});
+    };
+	
+    var n = s();
+
+
+    if (!e.hasVideoOnGatewayLoaded) {
+        if (n < 0 || n > 7) {	
+            e.hasVideoOnGatewayLoaded = true;
+            var i = "wsrp_rewrite?rw_urltype=resource&rw_resourcetype=url&rw_imagetype=general&rw_name=vap/video/airy2/prod/401.0-0/js/airy.js/wsrp_rewrite";
+            if (typeof e.P === "object") {
+                e.P.when("ready").execute(function () {
+                    P.load.js(i)
+                });
+                e.P.when("A").execute(function (n) {
+                    e.P.when("Airy").execute(function (e) {
+                        t(n.$)
+                    })
+                })
+            } else {
+                e.amznJQ.onReady("jQuery", function () {
+                    e.amznJQ.addLogical("Airy", [i]);
+                    e.amznJQ.available("Airy", function () {
+                        t(jQuery)
+                    })
+                })
+            }
+        }
+    }
+})(window)
+  </script>
